@@ -1,10 +1,10 @@
 /**
- * Error type enumeration
+ * ErrorType
+ * @desc Type representing supported errors
  */
 export declare enum ErrorType {
-    general_error = "GeneralError",
-    parser_error = "ParserError",
     validation_error = "ValidationError",
+    parameter_error = "ParameterError",
     type_error = "TypeError",
     value_error = "ValueError"
 }
@@ -59,5 +59,47 @@ export declare class ValueError extends GeneralError {
      */
     constructor(message: string, ...args: any[]);
 }
+/**
+ * TypeError
+ * @desc Class representing type error
+ */
+export declare class TypeError extends GeneralError {
+    readonly message: string;
+    /**
+     * Type error constructor by input parameters
+     * @param message initial input {@link string} message
+     * @param args initial input {@link Array} of arguments
+     */
+    constructor(message: string, ...args: any[]);
+}
+/**
+ * ValidationError
+ * @desc Class representing validation error
+ */
+export declare class ValidationError extends GeneralError {
+    readonly message: string;
+    /**
+     * Validation error constructor by input parameters
+     * @param message initial input {@link string} message
+     * @param args initial input {@link Array} of arguments
+     */
+    constructor(message: string, ...args: any[]);
+}
+/**
+ * UnsupportedParameterError
+ * @desc Class representing unsupported parameter error
+ */
+export declare class UnsupportedParameterError extends GeneralError {
+    readonly parameter: string;
+    /**
+     * Unsupported parameter error constructor by input parameters
+     * @param parameter: initial input {@link string} message
+     * @param args initial input {@link Array} of arguments
+     */
+    constructor(parameter: string, ...args: any[]);
+}
 export declare const valueError: (message: string, ...args: any[]) => ValueError;
+export declare const typeError: (message: string, ...args: any[]) => TypeError;
+export declare const validationError: (message: string, ...args: any[]) => ValidationError;
+export declare const unsupportedParamError: (param: string, ...args: any[]) => UnsupportedParameterError;
 //# sourceMappingURL=errors.d.ts.map

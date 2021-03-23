@@ -1,1 +1,1 @@
-{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["file:///C:/projects5/github-action-image-resizer/src/index.ts"],"names":[],"mappings":"AAGA,OAAO,EAAE,aAAa,EAAE,MAAM,kBAAkB,CAAA;AAyChD,eAAO,MAAM,gBAAgB,aAAa,GAAG,KAAQ,SAAS,aAAa,CAe1E,CAAA;AAeD,wBAA8B,GAAG,IAAI,OAAO,CAAC,IAAI,CAAC,CA+BjD"}
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["file:///C:/projects5/github-action-image-resizer/src/index.ts"],"names":[],"mappings":"AAqFA,wBAA8B,GAAG,IAAI,OAAO,CAAC,IAAI,CAAC,CAejD"}
