@@ -8,8 +8,7 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 ![Mergify Status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/AlexRogalskiy/github-action-image-resizer)
 [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
-
-<!-- [![Become a sponsor](https://img.shields.io/badge/sponsor-AlexRogalskiy-181717.svg?logo=github)](https://github.com/sponsors/AlexRogalskiy)-->
+[![Chat](https://img.shields.io/badge/chat-discussions-success.svg)](https://github.com/AlexRogalskiy/github-action-image-resizer/discussions)
 
 [![DeepScan grade](https://deepscan.io/api/teams/11946/projects/16314/branches/347248/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=11946&pid=16314&bid=347248)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/AlexRogalskiy/github-action-image-resizer)
@@ -97,25 +96,20 @@ Provides operations on resizing input image files (jpeg, png, webp, avif, tiff, 
 ```json
 [
     {
-        "prefix": "<!--views:info:marker:start-->\n",
-        "suffix": "\n<!--views:info:marker:end-->",
-        "sourceFile": "./data/info.md",
-        "placeholder": "<!--views:info:marker:start-->[\\s\\S]*?<!--views:info:marker:end-->",
-        "replacement": "<p align=\"center\" style=\"text-align:center;\">Info data block</p>"
+        "width": 150,
+        "height": 250,
+        "formatType": "jpeg",
+        "sourceFile": "./data/input.jpg",
+        "targetPath": "./data",
+        "targetFile": "output.jpg"
     },
     {
-        "prefix": "<!--views:readme:marker:start-->\n",
-        "suffix": "\n<!--views:readme:marker:end-->",
-        "sourceFile": "./data/readme.md",
-        "placeholder": "<!--views:readme:marker:start-->[\\s\\S]*?<!--views:readme:marker:end-->",
-        "replacement": "<p align=\"center\" style=\"text-align:center;\">Readme data block</p>"
-    },
-    {
-        "prefix": "test data\n",
-        "suffix": "",
-        "sourceFile": "./data/test.md",
-        "placeholder": "test data",
-        "replacement": "<p align=\"center\" style=\"text-align:center;\">Test data block</p>"
+        "width": 250,
+        "height": 250,
+        "formatType": "png",
+        "sourceFile": "./data/input2.png",
+        "targetPath": "./data",
+        "targetFile": "output2.png"
     }
 ]
 ```
@@ -130,7 +124,7 @@ Provides operations on resizing input image files (jpeg, png, webp, avif, tiff, 
 
 ### `quality`
 
-**Optional** Target image quality (should be in range **0-100%**)
+**Optional** Target image quality (should be in range **0-100**)
 
 ### `formatType`
 

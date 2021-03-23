@@ -58,6 +58,7 @@
         "@typescript-eslint/parser": "^4.15.0",
         "@typescript-eslint/typescript-estree": "^4.17.0",
         "@vercel/ncc": "~>0.27.0",
+        "boxen": "^5.0.0",
         "cz-conventional-changelog": "^3.3.0",
         "del-cli": "^3.0.1",
         "editorconfig-checker": "3.3.0",

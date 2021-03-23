@@ -1,3 +1,4 @@
+import boxen from 'boxen';
 import { FormatPattern } from './enum-types';
 import { Optional } from './standard-types';
 /**
@@ -8,31 +9,31 @@ export declare type ConfigOptions = {
     /**
      * Target image width
      */
-    width?: string;
+    width: string;
     /**
      * Target image height
      */
-    height?: string;
+    height: string;
     /**
      * Target format pattern
      */
-    formatType?: FormatPattern;
+    formatType: FormatPattern;
     /**
      * Target image quality
      */
-    quality?: number;
+    quality?: Optional<number>;
     /**
      * Source file to process
      */
-    sourceFile?: string;
+    sourceFile: string;
     /**
      * Target path to store files
      */
-    targetPath?: string;
+    targetPath: string;
     /**
      * Target file name
      */
-    targetFile?: string;
+    targetFile: string;
 };
 /**
  * ProfileOptions
@@ -47,6 +48,10 @@ export declare type ProfileOptions = {
      * Image resize options
      */
     resizeOptions?: ImageResizeOptions;
+    /**
+     * Output options
+     */
+    outputOptions?: boxen.Options;
 };
 /**
  * ImageFormatOptions

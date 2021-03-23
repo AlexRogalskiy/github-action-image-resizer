@@ -18,7 +18,7 @@ export const ensureDirExists = (dir: string, options: MakeDirectoryOptions = { r
     existsSync(dir) || mkdirSync(dir, options)
 }
 
-export const getDataAsJson = (fileName: string): ConfigOptions[] => {
+export const getDataAsJson = (fileName: string): Partial<ConfigOptions>[] => {
     const fileData = readFileSync(fileName)
 
     return deserialize(fileData.toString())

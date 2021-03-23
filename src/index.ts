@@ -1,56 +1,69 @@
 import * as core from '@actions/core'
 import { basename, join } from 'path'
+import boxen from 'boxen'
 
 import { ensureDirExists, getDataAsJson } from './utils/files'
 import { isValidFile } from './utils/validators'
-import { mergeProps, toFormatString } from './utils/commons'
+import { mergeProps, toFormatString, toInt } from './utils/commons'
 
 import { profile } from './utils/env'
 
 import { ConfigOptions } from '../typings/domain-types'
 import { FormatPattern } from '../typings/enum-types'
 
-// eslint-disable-next-line @typescript-eslint/no-require-imports,@typescript-eslint/no-var-requires
-const sharp = require('sharp')
+const sharp = (globals => {
+    globals.cache({ files: 0 })
+    globals.cache(false)
 
-const processSourceFile = async (options: Required<ConfigOptions>): Promise<boolean> => {
+    return globals
+    // eslint-disable-next-line @typescript-eslint/no-var-requires,@typescript-eslint/no-require-imports
+})(require('sharp'))
+
+const processSourceFile = async (options: ConfigOptions): Promise<void> => {
     const { width, height, quality, formatType, sourceFile, targetPath, targetFile } = options
 
     const formatOptions = mergeProps(profile.formatOptions, { quality })
     const resizeOptions = mergeProps(profile.resizeOptions, { width, height })
 
     core.info(
-        `
-        Processing source file: ${sourceFile} with parameters:
-        format type=${formatType}
-        format options=${toFormatString(formatOptions)},
-        resize options=${toFormatString(resizeOptions)}
-        `
+        boxen(
+            `
+        Processing source file: [${sourceFile}] with parameters:
+        input format type=[${formatType}],
+        input format options=${toFormatString(formatOptions)},
+        input resize options=${toFormatString(resizeOptions)}
+        `,
+            profile.outputOptions
+        )
     )
 
     ensureDirExists(targetPath)
 
-    const format = FormatPattern[formatType]
     const fileName = join(targetPath, targetFile)
 
-    const resizeResult = await sharp(sourceFile, formatOptions)
+    const status = await sharp(sourceFile, formatOptions)
         .trim()
         .resize(resizeOptions)
         .withMetadata()
-        .toFormat(format)
+        .toFormat(formatType)
         .toFile(fileName)
 
-    core.info(`Resizing operation terminated with status: ${toFormatString(resizeResult)}`)
-
-    return true
+    core.info(
+        boxen(
+            `Resizing operation completed with parameters: ${toFormatString(status)}`,
+            profile.outputOptions
+        )
+    )
 }
 
-const getConfigOptions = (options: any = {}): Required<ConfigOptions> => {
+const buildConfigOptions = (options: Partial<ConfigOptions>): ConfigOptions => {
     const width = options.width || core.getInput('width', { required: true })
     const height = options.height || core.getInput('height', { required: true })
 
-    const quality = options.quality || core.getInput('quality') || 100
-    const formatType = options.formatType || core.getInput('formatType', { required: true })
+    const quality = options.quality || toInt(core.getInput('quality'))
+
+    const formatData = options.formatType || core.getInput('formatType', { required: true })
+    const formatType = FormatPattern[formatData]
 
     const sourceFile = options.sourceFile || core.getInput('sourceFile', { required: true })
     const targetPath = options.targetPath || core.getInput('targetPath', { required: true })
@@ -67,36 +80,29 @@ const getConfigOptions = (options: any = {}): Required<ConfigOptions> => {
     }
 }
 
-const processData = async (...options: ConfigOptions[]): Promise<void> => {
-    let status = false
+const runResizingOperation = async (): Promise<void> => {
+    const sourceData = core.getInput('sourceData')
 
-    for (const item of options) {
-        const options = getConfigOptions(item)
-        status = await processSourceFile(options)
+    if (isValidFile(sourceData)) {
+        const options = getDataAsJson(sourceData)
+        for (const item of options) {
+            const options = buildConfigOptions(item)
+            await processSourceFile(options)
+        }
+    } else {
+        const options = buildConfigOptions({})
+        await processSourceFile(options)
     }
-
-    core.setOutput('changed', status)
-}
-
-const initSharpConfig = (): void => {
-    sharp.cache({ files: 0 })
-    sharp.cache(false)
 }
 
 export default async function run(): Promise<void> {
     try {
-        initSharpConfig()
+        await runResizingOperation()
 
-        const sourceData = core.getInput('sourceData')
-
-        if (isValidFile(sourceData)) {
-            const options = getDataAsJson(sourceData)
-            await processData(...options)
-        } else {
-            await processData({})
-        }
+        core.setOutput('changed', true)
     } catch (e) {
-        core.setFailed(`Cannot process input source data, message: ${e.message}`)
+        core.setOutput('changed', false)
+        core.setFailed(`Cannot process input image data, message: ${e.message}`)
     }
 }
 

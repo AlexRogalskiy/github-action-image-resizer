@@ -1,0 +1,19 @@
+[
+    {
+        "width": 150,
+        "height": 250,
+        "quality": 100,
+        "formatType": "jpeg",
+        "sourceFile": "./data/input.jpg",
+        "targetPath": "./data",
+        "targetFile": "output.jpg"
+    },
+    {
+        "width": 250,
+        "height": 250,
+        "formatType": "png",
+        "sourceFile": "./data/input2.png",
+        "targetPath": "./data",
+        "targetFile": "output2.png"
+    }
+]

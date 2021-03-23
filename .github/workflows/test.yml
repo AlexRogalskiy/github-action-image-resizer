@@ -60,12 +60,15 @@ jobs:
         uses: actions/setup-node@v1
 
       - name: Install Dependencies
-        run: npm install --build-from-source
+        run: npm install
+
+      - name: Build Dependencies
+        run: npm all
 
       - uses: ./
         with:
-          width: '250'
-          height: '150'
+          width: 150
+          height: 250
           formatType: 'jpeg'
           sourceFile: ./data/input.jpg
           targetPath: ./data
