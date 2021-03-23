@@ -30,7 +30,7 @@ inputs:
 
 outputs:
   changed:
-    description: 'File processing operation status'
+    description: 'File image processing operation status'
 
 runs:
   using: 'node12'
