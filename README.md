@@ -40,16 +40,15 @@
 ## _Table of contents_
 
 <!--ts-->
-   * [<em>Image resizer</em>](#image-resizer)
+   * [<em>Image Resizer</em>](#image-resizer)
       * [<em>Table of contents</em>](#table-of-contents)
       * [<em>Description</em>](#description)
       * [<em>Inputs</em>](#inputs)
          * [sourceData](#sourcedata)
-         * [mode](#mode)
-            * [unique](#unique)
-            * [duplicate](#duplicate)
-         * [jsonPath](#jsonpath)
-         * [jsonFields](#jsonfields)
+         * [width](#width)
+         * [height](#height)
+         * [quality](#quality)
+         * [formatType](#formattype)
          * [sourceFile](#sourcefile)
          * [targetPath](#targetpath)
          * [targetFile](#targetfile)
