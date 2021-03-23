@@ -1,0 +1,156 @@
+{
+    "name": "github-action-image-resizer",
+    "version": "0.0.0-dev",
+    "description": "Automatically resizes image files (jpeg, png, webp, avif, tiff, gif and svg) by provided format parameters",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "license": "GPL-3.0",
+    "private": true,
+    "scripts": {
+        "format": "prettier --single-quote --write **/*.ts",
+        "format:check": "prettier --check **/*.ts",
+        "lint:editorconfig": "editorconfig-checker",
+        "start:action": "npm run build && node dist/index.js",
+        "dev": "env-cmd --silent -e dev npm run start:action",
+        "lint": "eslint --cache --fix --quiet --format codeframe --ext js,ts .",
+        "lint:staged": "lint-staged --no-stash --allow-empty",
+        "pretty": "pretty-quick --staged --pattern '!test/tests/lint/**'",
+        "license": "license-checker --json > licenses.json",
+        "docs": "typedoc",
+        "semantic-release": "semantic-release",
+        "commit": "git-cz",
+        "postpublish": "npm run clean",
+        "precommit": "npm run lint:staged",
+        "postinstall": "husky install",
+        "prebuild": "rimraf dist coverage",
+        "build": "./node_modules/.bin/ncc build src/index.ts -m -o dist",
+        "package": "./node_modules/.bin/ncc build src/index.ts --source-map --license licenses.txt",
+        "reinstall": "del-cli ./node_modules ./package-lock.json ./yarn.lock",
+        "version": "git add -A dist",
+        "postversion": "git push && git push --tags",
+        "test:folio": "env-cmd --silent -e test folio tests/spec/",
+        "test": "env-cmd --silent -e test jest",
+        "test:coverage": "env-cmd --silent -e test jest --collectCoverage --detectOpenHandles",
+        "test:watch": "env-cmd --silent -e test jest --watch",
+        "test:license": "license-checker --production --summary --unknown --onlyAllow=\"Apache-2.0;BSD;ISC;MIT;UNLICENSED;\"",
+        "test:all": "npm run test && npm run test:folio && npm run test:license",
+        "check:all": "npm run format:check",
+        "all": "npm run format && npm run pretty && npm run lint && npm run build"
+    },
+    "dependencies": {
+        "@actions/core": "^1.2.6",
+        "env-cmd": "^10.1.0",
+        "lodash": "^4.17.20",
+        "sharp": "^0.27.2"
+    },
+    "devDependencies": {
+        "@semantic-release/changelog": "^5.0.1",
+        "@semantic-release/commit-analyzer": "^8.0.1",
+        "@semantic-release/git": "^9.0.0",
+        "@semantic-release/github": "^7.2.0",
+        "@semantic-release/npm": "^7.0.10",
+        "@semantic-release/release-notes-generator": "^9.0.1",
+        "@types/jest": "^26.0.20",
+        "@types/lodash.mergewith": "^4.6.6",
+        "@types/node": "^14.14.35",
+        "@types/prettier": "^2.1.5",
+        "@typescript-eslint/eslint-plugin": "^4.15.0",
+        "@typescript-eslint/parser": "^4.15.0",
+        "@typescript-eslint/typescript-estree": "^4.17.0",
+        "@vercel/ncc": "~>0.27.0",
+        "cz-conventional-changelog": "^3.3.0",
+        "del-cli": "^3.0.1",
+        "editorconfig-checker": "3.3.0",
+        "license-checker": "^25.0.1",
+        "eslint": "^7.19.0",
+        "eslint-config-prettier": "^6.15.0",
+        "eslint-plugin-github": "^4.1.1",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jest": "^23.20.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^3.1.4",
+        "eslint-plugin-spellcheck": "0.0.8",
+        "expect": "^26.6.2",
+        "folio": "^0.3.18",
+        "git-cz": "^4.1.0",
+        "husky": "^5.0.8",
+        "jest": "^26.6.3",
+        "jest-circus": "^26.6.3",
+        "lint-staged": "^10.1.6",
+        "prettier": "^2.1.2",
+        "pretty-quick": "^3.1.0",
+        "semantic-release": ">=17.2.3",
+        "ts-jest": "^26.4.4",
+        "ts-node": ">=9.0.0",
+        "typedoc": "^0.20.28",
+        "typescript": "^4.1.3"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AlexRogalskiy/github-action-image-resizer.git"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "engines": {
+        "node": ">= 8.0.0"
+    },
+    "keywords": [
+        "github-actions",
+        "tag",
+        "javascript"
+    ],
+    "maintainers": [
+        {
+            "name": "Alexander Rogalskiy",
+            "email": "hi@nullables.io"
+        }
+    ],
+    "contributors": [
+        {
+            "name": "Alexander Rogalskiy",
+            "email": "hi@nullables.io"
+        }
+    ],
+    "release": {
+        "tagFormat": "v${version}",
+        "plugins": [
+            "@semantic-release/release-notes-generator",
+            [
+                "@semantic-release/npm",
+                {
+                    "npmPublish": false,
+                    "tarballDir": "dist",
+                    "allowSameVersion": true
+                }
+            ],
+            [
+                "@semantic-release/github",
+                {
+                    "assets": "dist/*.tgz"
+                }
+            ]
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-push": "npm run check:all",
+            "prepare-commit-msg": "git cz --hook --non-interactive --type=feat --subject=\"added new features\" || true",
+            "pre-commit": "npm run lint:staged && npm run all && npm run test:all"
+        }
+    },
+    "bugs": {
+        "url": "https://github.com/AlexRogalskiy/github-action-image-resizer/issues"
+    },
+    "homepage": "https://github.com/AlexRogalskiy/github-action-image-resizer",
+    "author": {
+        "name": "Alexander Rogalskiy",
+        "url": "https://github.com/AlexRogalskiy"
+    },
+    "funding": "https://github.com/sponsors/AlexRogalskiy",
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    }
+}

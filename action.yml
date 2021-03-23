@@ -1,0 +1,42 @@
+name: 'Tag Replacer'
+description: 'Provides operations on resizing input image files (jpeg, png, webp, avif, tiff, gif and svg) by format parameters.'
+author: 'AlexRogalskiy'
+
+inputs:
+  sourceData:
+    description: 'JSON data source with action parameters'
+    required: false
+  width:
+    description: 'String representing target image width'
+    required: true
+  height:
+    description: 'String representing target image height'
+    required: true
+  quality:
+    description: 'String representing target image quality (in range 0-100)'
+    required: false
+  formatType:
+    description: 'String representing target image format type (heic, heif, avif, jpeg, png, raw, tiff, webp, gif)'
+    required: true
+  sourceFile:
+    description: 'Source input image file to resize'
+    required: true
+  targetPath:
+    description: 'Target path to store processed image files'
+    required: true
+  targetFile:
+    description: 'Target image file name (default - sourceFile)'
+    required: false
+
+outputs:
+  changed:
+    description: 'File processing operation status'
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+
+# Ref: https://haya14busa.github.io/github-action-brandings/
+branding:
+  icon: 'image'
+  color: 'orange'
