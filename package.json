@@ -13,6 +13,7 @@
         "start:action": "npm run build && node dist/index.js",
         "dev": "env-cmd --silent -e dev npm run start:action",
         "lint": "eslint --cache --fix --quiet --format codeframe --ext js,ts .",
+        "lint:clean": "rimraf .eslintcache",
         "lint:staged": "lint-staged --no-stash --allow-empty",
         "pretty": "pretty-quick --staged --pattern '!test/tests/lint/**'",
         "license": "license-checker --json > licenses.json",
@@ -33,9 +34,11 @@
         "test:coverage": "env-cmd --silent -e test jest --collectCoverage --detectOpenHandles",
         "test:watch": "env-cmd --silent -e test jest --watch",
         "test:license": "license-checker --production --summary --unknown --onlyAllow=\"Apache-2.0;BSD;ISC;MIT;UNLICENSED;\"",
-        "test:all": "npm run test && npm run test:folio && npm run test:license",
+        "lint:all": "npm run lint:clean && npm run lint",
+        "format:all": "npm run format",
         "check:all": "npm run format:check",
-        "all": "npm run format && npm run pretty && npm run lint && npm run build"
+        "test:all": "npm run test && npm run test:folio && npm run test:license",
+        "all": "npm run format:all && npm run lint:all && npm run pretty && npm run build"
     },
     "dependencies": {
         "@actions/core": "^1.2.6",

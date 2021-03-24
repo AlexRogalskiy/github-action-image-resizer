@@ -2,9 +2,10 @@ import * as core from '@actions/core'
 import { basename, join } from 'path'
 import boxen from 'boxen'
 
-import { ensureDirExists, getDataAsJson } from './utils/files'
+import { ensureDirExists, getConfigOptions } from './utils/files'
 import { isValidFile } from './utils/validators'
-import { mergeProps, toFormatString, toInt } from './utils/commons'
+import { mergeProps, toInt } from './utils/commons'
+import { serialize } from './utils/serializers'
 
 import { profile } from './utils/env'
 
@@ -19,7 +20,7 @@ const sharp = (globals => {
     // eslint-disable-next-line @typescript-eslint/no-var-requires,@typescript-eslint/no-require-imports
 })(require('sharp'))
 
-const processSourceFile = async (options: ConfigOptions): Promise<void> => {
+const processSourceFile = async (options: ConfigOptions): Promise<boolean> => {
     const { width, height, quality, formatType, sourceFile, targetPath, targetFile } = options
 
     const formatOptions = mergeProps(profile.formatOptions, { quality })
@@ -28,10 +29,10 @@ const processSourceFile = async (options: ConfigOptions): Promise<void> => {
     core.info(
         boxen(
             `
-        Processing source file: [${sourceFile}] with parameters:
-        input format type=[${formatType}],
-        input format options=${toFormatString(formatOptions)},
-        input resize options=${toFormatString(resizeOptions)}
+        Processing input source file: [${sourceFile}] with parameters:
+        format type=[${formatType}],
+        format options=${serialize(formatOptions)},
+        resize options=${serialize(resizeOptions)}
         `,
             profile.outputOptions
         )
@@ -41,33 +42,37 @@ const processSourceFile = async (options: ConfigOptions): Promise<void> => {
 
     const fileName = join(targetPath, targetFile)
 
-    const status = await sharp(sourceFile, formatOptions)
-        .trim()
-        .resize(resizeOptions)
-        .withMetadata()
-        .toFormat(formatType)
-        .toFile(fileName)
+    try {
+        const status = await sharp(sourceFile, formatOptions)
+            .trim()
+            .resize(resizeOptions)
+            .withMetadata()
+            .toFormat(formatType)
+            .toFile(fileName)
 
-    core.info(
-        boxen(
-            `Resizing operation completed with parameters: ${toFormatString(status)}`,
-            profile.outputOptions
+        core.info(
+            boxen(`Resizing operation completed with parameters: ${serialize(status)}`, profile.outputOptions)
         )
-    )
+
+        return true
+    } catch (e) {
+        core.error(`Cannot process input file image: ${fileName}`)
+        throw e
+    }
 }
 
 const buildConfigOptions = (options: Partial<ConfigOptions>): ConfigOptions => {
-    const width = options.width || core.getInput('width', { required: true })
-    const height = options.height || core.getInput('height', { required: true })
+    const width = options.width || getRequiredProperty('width')
+    const height = options.height || getRequiredProperty('height')
 
-    const quality = options.quality || toInt(core.getInput('quality'))
+    const quality = options.quality || toInt(getProperty('quality'))
 
-    const formatData = options.formatType || core.getInput('formatType', { required: true })
+    const formatData = options.formatType || getRequiredProperty('formatType')
     const formatType = FormatPattern[formatData]
 
-    const sourceFile = options.sourceFile || core.getInput('sourceFile', { required: true })
-    const targetPath = options.targetPath || core.getInput('targetPath', { required: true })
-    const targetFile = options.targetFile || core.getInput('targetFile') || basename(sourceFile)
+    const sourceFile = options.sourceFile || getRequiredProperty('sourceFile')
+    const targetPath = options.targetPath || getRequiredProperty('targetPath')
+    const targetFile = options.targetFile || getProperty('targetFile') || basename(sourceFile)
 
     return {
         width,
@@ -80,28 +85,44 @@ const buildConfigOptions = (options: Partial<ConfigOptions>): ConfigOptions => {
     }
 }
 
+const getRequiredProperty = (property: string): string => {
+    return getProperty(property, { required: true })
+}
+
+const getProperty = (property: string, options?: core.InputOptions): string => {
+    return core.getInput(property, options)
+}
+
+const executeOperation = async (...options: Partial<ConfigOptions>[]): Promise<boolean> => {
+    const result: boolean[] = []
+
+    for (const option of options) {
+        const options = buildConfigOptions(option)
+        const status = await processSourceFile(options)
+        result.push(status)
+    }
+
+    return result.every(value => value)
+}
+
 const runResizingOperation = async (): Promise<void> => {
     const sourceData = core.getInput('sourceData')
 
+    let status: boolean
     if (isValidFile(sourceData)) {
-        const options = getDataAsJson(sourceData)
-        for (const item of options) {
-            const options = buildConfigOptions(item)
-            await processSourceFile(options)
-        }
+        const options = getConfigOptions(sourceData)
+        status = await executeOperation(...options)
     } else {
-        const options = buildConfigOptions({})
-        await processSourceFile(options)
+        status = await executeOperation({})
     }
+
+    core.setOutput('changed', status)
 }
 
 export default async function run(): Promise<void> {
     try {
         await runResizingOperation()
-
-        core.setOutput('changed', true)
     } catch (e) {
-        core.setOutput('changed', false)
         core.setFailed(`Cannot process input image data, message: ${e.message}`)
     }
 }

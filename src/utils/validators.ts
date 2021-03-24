@@ -14,11 +14,11 @@ export const isNull = (value: any): boolean => {
 }
 
 export const isUndefined = (value: any): boolean => {
-    return value === undefined
+    return value === undefined || typeof value === 'undefined'
 }
 
 export const isNullOrUndefined = (value: any): boolean => {
-    return isNull(value) || isUndefined(value) || typeof value === 'undefined'
+    return isNull(value) || isUndefined(value)
 }
 
 export const isNotNull = (value: any): boolean => {

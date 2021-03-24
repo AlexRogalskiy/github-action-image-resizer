@@ -9,31 +9,31 @@ export declare type ConfigOptions = {
     /**
      * Target image width
      */
-    width: string;
+    readonly width: string;
     /**
      * Target image height
      */
-    height: string;
+    readonly height: string;
     /**
      * Target format pattern
      */
-    formatType: FormatPattern;
+    readonly formatType: FormatPattern;
     /**
      * Target image quality
      */
-    quality?: Optional<number>;
+    readonly quality?: Optional<number>;
     /**
      * Source file to process
      */
-    sourceFile: string;
+    readonly sourceFile: string;
     /**
      * Target path to store files
      */
-    targetPath: string;
+    readonly targetPath: string;
     /**
      * Target file name
      */
-    targetFile: string;
+    readonly targetFile: string;
 };
 /**
  * ProfileOptions
@@ -43,15 +43,15 @@ export declare type ProfileOptions = {
     /**
      * Image format options
      */
-    formatOptions?: ImageFormatOptions;
+    readonly formatOptions?: ImageFormatOptions;
     /**
      * Image resize options
      */
-    resizeOptions?: ImageResizeOptions;
+    readonly resizeOptions?: ImageResizeOptions;
     /**
      * Output options
      */
-    outputOptions?: boxen.Options;
+    readonly outputOptions?: boxen.Options;
 };
 /**
  * ImageFormatOptions

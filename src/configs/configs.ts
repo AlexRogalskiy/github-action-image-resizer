@@ -12,7 +12,7 @@ import { mergeProps } from '../utils/commons'
 export type ProfileRecord = Record<Profile, Partial<ProfileOptions>>
 
 /**
- * Image configuration options
+ * Configuration options
  */
 export const CONFIG: Readonly<ProfileRecord> = {
     dev: {

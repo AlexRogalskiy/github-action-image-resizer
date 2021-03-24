@@ -6,7 +6,7 @@ import { ProfileOptions } from '../../typings/domain-types';
  */
 export declare type ProfileRecord = Record<Profile, Partial<ProfileOptions>>;
 /**
- * Image configuration options
+ * Configuration options
  */
 export declare const CONFIG: Readonly<ProfileRecord>;
 //# sourceMappingURL=configs.d.ts.map
