@@ -66,8 +66,8 @@
 				<p><a href="https://github.com/lekterable/perfekt"><img src="https://img.shields.io/badge/management-perfekt%F0%9F%91%8C-red.svg" alt="management: perfekt👌"></a>
 					<a href="https://github.com/prettier/prettier"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="code style: prettier"></a>
 					<img src="https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/AlexRogalskiy/github-action-image-resizer" alt="Mergify Status">
-				<a href="https://houndci.com"><img src="https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg" alt="Reviewed by Hound"></a></p>
-				<!-- [![Become a sponsor](https://img.shields.io/badge/sponsor-AlexRogalskiy-181717.svg?logo=github)](https://github.com/sponsors/AlexRogalskiy)-->
+					<a href="https://houndci.com"><img src="https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg" alt="Reviewed by Hound"></a>
+				<a href="https://github.com/AlexRogalskiy/github-action-image-resizer/discussions"><img src="https://img.shields.io/badge/chat-discussions-success.svg" alt="Chat"></a></p>
 				<p><a href="https://deepscan.io/dashboard#view=project&amp;tid=11946&amp;pid=16314&amp;bid=347248"><img src="https://deepscan.io/api/teams/11946/projects/16314/branches/347248/badge/grade.svg" alt="DeepScan grade"></a>
 					<img src="https://img.shields.io/github/v/tag/AlexRogalskiy/github-action-image-resizer" alt="GitHub tag (latest by date)">
 					<img src="https://img.shields.io/github/release-date/AlexRogalskiy/github-action-image-resizer" alt="GitHub Release Date">
@@ -97,18 +97,15 @@
 				</a>
 				<!--ts-->
 				<ul>
-					<li><a href="#image-resizer"><em>Image resizer</em></a><ul>
+					<li><a href="#image-resizer"><em>Image Resizer</em></a><ul>
 							<li><a href="#table-of-contents"><em>Table of contents</em></a></li>
 							<li><a href="#description"><em>Description</em></a></li>
 							<li><a href="#inputs"><em>Inputs</em></a><ul>
 									<li><a href="#sourcedata">sourceData</a></li>
-									<li><a href="#mode">mode</a><ul>
-											<li><a href="#unique">unique</a></li>
-											<li><a href="#duplicate">duplicate</a></li>
-										</ul>
-									</li>
-									<li><a href="#jsonpath">jsonPath</a></li>
-									<li><a href="#jsonfields">jsonFields</a></li>
+									<li><a href="#width">width</a></li>
+									<li><a href="#height">height</a></li>
+									<li><a href="#quality">quality</a></li>
+									<li><a href="#formattype">formatType</a></li>
 									<li><a href="#sourcefile">sourceFile</a></li>
 									<li><a href="#targetpath">targetPath</a></li>
 									<li><a href="#targetfile">targetFile</a></li>
@@ -161,25 +158,20 @@
 				<p><strong>Optional</strong> JSON data source file with following action parameters (just for actual example):</p>
 				<pre><code class="language-json"><span style="color: #D4D4D4">[</span>
 <span style="color: #D4D4D4">    {</span>
-<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;prefix&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;&lt;!--views:info:marker:start--&gt;</span><span style="color: #D7BA7D">\n</span><span style="color: #CE9178">&quot;</span><span style="color: #D4D4D4">,</span>
-<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;suffix&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;</span><span style="color: #D7BA7D">\n</span><span style="color: #CE9178">&lt;!--views:info:marker:end--&gt;&quot;</span><span style="color: #D4D4D4">,</span>
-<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;sourceFile&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;./data/info.md&quot;</span><span style="color: #D4D4D4">,</span>
-<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;placeholder&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;&lt;!--views:info:marker:start--&gt;[</span><span style="color: #D7BA7D">\\</span><span style="color: #CE9178">s</span><span style="color: #D7BA7D">\\</span><span style="color: #CE9178">S]*?&lt;!--views:info:marker:end--&gt;&quot;</span><span style="color: #D4D4D4">,</span>
-<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;replacement&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;&lt;p align=</span><span style="color: #D7BA7D">\&quot;</span><span style="color: #CE9178">center</span><span style="color: #D7BA7D">\&quot;</span><span style="color: #CE9178"> style=</span><span style="color: #D7BA7D">\&quot;</span><span style="color: #CE9178">text-align:center;</span><span style="color: #D7BA7D">\&quot;</span><span style="color: #CE9178">&gt;Info data block&lt;/p&gt;&quot;</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;width&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #B5CEA8">150</span><span style="color: #D4D4D4">,</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;height&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #B5CEA8">250</span><span style="color: #D4D4D4">,</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;formatType&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;jpeg&quot;</span><span style="color: #D4D4D4">,</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;sourceFile&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;./data/input.jpg&quot;</span><span style="color: #D4D4D4">,</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;targetPath&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;./data&quot;</span><span style="color: #D4D4D4">,</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;targetFile&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;output.jpg&quot;</span>
 <span style="color: #D4D4D4">    },</span>
 <span style="color: #D4D4D4">    {</span>
-<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;prefix&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;&lt;!--views:readme:marker:start--&gt;</span><span style="color: #D7BA7D">\n</span><span style="color: #CE9178">&quot;</span><span style="color: #D4D4D4">,</span>
-<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;suffix&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;</span><span style="color: #D7BA7D">\n</span><span style="color: #CE9178">&lt;!--views:readme:marker:end--&gt;&quot;</span><span style="color: #D4D4D4">,</span>
-<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;sourceFile&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;./data/readme.md&quot;</span><span style="color: #D4D4D4">,</span>
-<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;placeholder&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;&lt;!--views:readme:marker:start--&gt;[</span><span style="color: #D7BA7D">\\</span><span style="color: #CE9178">s</span><span style="color: #D7BA7D">\\</span><span style="color: #CE9178">S]*?&lt;!--views:readme:marker:end--&gt;&quot;</span><span style="color: #D4D4D4">,</span>
-<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;replacement&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;&lt;p align=</span><span style="color: #D7BA7D">\&quot;</span><span style="color: #CE9178">center</span><span style="color: #D7BA7D">\&quot;</span><span style="color: #CE9178"> style=</span><span style="color: #D7BA7D">\&quot;</span><span style="color: #CE9178">text-align:center;</span><span style="color: #D7BA7D">\&quot;</span><span style="color: #CE9178">&gt;Readme data block&lt;/p&gt;&quot;</span>
-<span style="color: #D4D4D4">    },</span>
-<span style="color: #D4D4D4">    {</span>
-<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;prefix&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;test data</span><span style="color: #D7BA7D">\n</span><span style="color: #CE9178">&quot;</span><span style="color: #D4D4D4">,</span>
-<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;suffix&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;&quot;</span><span style="color: #D4D4D4">,</span>
-<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;sourceFile&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;./data/test.md&quot;</span><span style="color: #D4D4D4">,</span>
-<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;placeholder&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;test data&quot;</span><span style="color: #D4D4D4">,</span>
-<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;replacement&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;&lt;p align=</span><span style="color: #D7BA7D">\&quot;</span><span style="color: #CE9178">center</span><span style="color: #D7BA7D">\&quot;</span><span style="color: #CE9178"> style=</span><span style="color: #D7BA7D">\&quot;</span><span style="color: #CE9178">text-align:center;</span><span style="color: #D7BA7D">\&quot;</span><span style="color: #CE9178">&gt;Test data block&lt;/p&gt;&quot;</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;width&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #B5CEA8">250</span><span style="color: #D4D4D4">,</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;height&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #B5CEA8">250</span><span style="color: #D4D4D4">,</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;formatType&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;png&quot;</span><span style="color: #D4D4D4">,</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;sourceFile&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;./data/input2.png&quot;</span><span style="color: #D4D4D4">,</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;targetPath&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;./data&quot;</span><span style="color: #D4D4D4">,</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;targetFile&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;output2.png&quot;</span>
 <span style="color: #D4D4D4">    }</span>
 <span style="color: #D4D4D4">]</span>
 </code></pre>
@@ -194,7 +186,7 @@
 				<a href="#quality" id="quality" style="color: inherit; text-decoration: none;">
 					<h3><code>quality</code></h3>
 				</a>
-				<p><strong>Optional</strong> Target image quality (should be in range <strong>0-100%</strong>)</p>
+				<p><strong>Optional</strong> Target image quality (should be in range <strong>0-100</strong>)</p>
 				<a href="#formattype" id="formattype" style="color: inherit; text-decoration: none;">
 					<h3><code>formatType</code></h3>
 				</a>
