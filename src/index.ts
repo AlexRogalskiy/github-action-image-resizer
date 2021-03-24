@@ -7,7 +7,7 @@ import { isValidFile } from './utils/validators'
 import { mergeProps, toInt } from './utils/commons'
 import { serialize } from './utils/serializers'
 
-import { profile } from './utils/env'
+import { profile } from './utils/profiles'
 
 import { ConfigOptions } from '../typings/domain-types'
 import { FormatPattern } from '../typings/enum-types'
@@ -106,7 +106,7 @@ const executeOperation = async (...options: Partial<ConfigOptions>[]): Promise<b
 }
 
 const runResizingOperation = async (): Promise<void> => {
-    const sourceData = core.getInput('sourceData')
+    const sourceData = getProperty('sourceData')
 
     let status: boolean
     if (isValidFile(sourceData)) {

@@ -7,7 +7,7 @@ import { mergeProps } from '../utils/commons'
 
 /**
  * ProfileRecord
- * @desc Type representing image profile configuration options
+ * @desc Type representing image profiles configuration options
  */
 export type ProfileRecord = Record<Profile, Partial<ProfileOptions>>
 

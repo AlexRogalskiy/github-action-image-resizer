@@ -20,7 +20,7 @@
       "login": "AlexRogalskiy",
       "name": "Alex Rogalskiy",
       "avatar_url": "https://avatars3.githubusercontent.com/u/3901898",
-      "profile": "https://github.com/AlexRogalskiy",
+      "profiles": "https://github.com/AlexRogalskiy",
       "contributions": [
         "code",
         "design",
@@ -35,7 +35,7 @@
       "login": "RenovateBot",
       "name": "Renovate Bot",
       "avatar_url": "https://avatars1.githubusercontent.com/u/25180681",
-      "profile": "https://github.com/renovate-bot",
+      "profiles": "https://github.com/renovate-bot",
       "contributions": [
          "maintenance"
       ]

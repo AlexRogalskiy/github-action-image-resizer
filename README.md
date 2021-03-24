@@ -1,6 +1,6 @@
 # _Image Resizer_
 
-> GitHub Action to resize images (jpeg, png)
+> GitHub Action to resize images (jpeg, png, webp, avif, tiff, gif, svg)
 
 [![GitHub marketplace](https://img.shields.io/badge/marketplacegithub-image--resizer-blue?logo=github)](https://github.com/marketplace/actions/image-resizer)
 
@@ -29,13 +29,15 @@
 ![CI](https://github.com/AlexRogalskiy/github-action-image-resizer/workflows/CI/badge.svg)
 [![CircleCI](https://circleci.com/gh/AlexRogalskiy/github-action-image-resizer.svg?style=shield)](https://circleci.com/gh/AlexRogalskiy/github-action-image-resizer)
 
-<!--[![codecov](https://codecov.io/gh/AlexRogalskiy/github-action-image-resizer/branch/master/graph/badge.svg)](https://codecov.io/gh/AlexRogalskiy/github-action-image-resizer)-->
-
 [![GitHub Super-Linter](https://github.com/AlexRogalskiy/github-action-image-resizer/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![ComVer](https://img.shields.io/badge/ComVer-compliant-brightgreen.svg)][repo]
 [![Public workflows that use this action.][total_usages]][search_results]
 [![Licence][license_id]][license_content]
+
+[![Chat](https://img.shields.io/badge/chat-discussions-success.svg)](https://github.com/AlexRogalskiy/github-action-image-resizer/discussions)
+[![Open questions](https://img.shields.io/badge/Open-questions-blue.svg?style=flat-curved)](https://github.com/AlexRogalskiy/github-action-image-resizer/labels/question)
+[![Open bugs](https://img.shields.io/badge/Open-bugs-red.svg?style=flat-curved)](https://github.com/AlexRogalskiy/github-action-image-resizer/labels/bug)
 
 ## _Table of contents_
 
@@ -84,7 +86,7 @@
     </a>
 </p>
 
-Provides operations on resizing input image files (jpeg, png, webp, avif, tiff, gif and svg) by format parameters.
+Provides operations on resizing input image files (jpeg, png, webp, avif, tiff, gif, svg) by format parameters.
 
 ## _Inputs_
 

@@ -37,7 +37,7 @@ export declare type ConfigOptions = {
 };
 /**
  * ProfileOptions
- * @desc Type representing profile options
+ * @desc Type representing profiles options
  */
 export declare type ProfileOptions = {
     /**

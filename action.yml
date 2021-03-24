@@ -1,5 +1,5 @@
 name: 'Image Resizer'
-description: 'Provides operations on resizing input image files (jpeg, png, webp, avif, tiff, gif and svg) by format parameters.'
+description: 'Provides operations on resizing input image files (jpeg, png, webp, avif, tiff, gif, svg) by format parameters.'
 author: 'AlexRogalskiy'
 
 inputs:
