@@ -44,3 +44,5 @@ node_modules
 
 # Build files
 !dist/index.js
+!dist/build
+!dist/vendor

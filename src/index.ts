@@ -106,7 +106,7 @@ const executeOperation = async (...options: Partial<ConfigOptions>[]): Promise<b
 }
 
 const runResizingOperation = async (): Promise<void> => {
-    const sourceData = getProperty('sourceData')
+    const sourceData = './data/sourceData.json' || getProperty('sourceData')
 
     let status: boolean
     if (isValidFile(sourceData)) {
