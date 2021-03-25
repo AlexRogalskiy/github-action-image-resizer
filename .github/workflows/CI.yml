@@ -60,6 +60,7 @@ jobs:
       - name: coverage
         uses: codecov/codecov-action@v1
         with:
+          token: ${{ secrets.CODECOV_TOKEN }}
           name: actions ${{ matrix.node-version }}
           file: ./coverage/coverage-final.json
           fail_ci_if_error: true

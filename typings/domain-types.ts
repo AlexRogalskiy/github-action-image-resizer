@@ -11,11 +11,11 @@ export type ConfigOptions = {
     /**
      * Target image width
      */
-    readonly width: string
+    readonly width: number
     /**
      * Target image height
      */
-    readonly height: string
+    readonly height: number
     /**
      * Target format pattern
      */

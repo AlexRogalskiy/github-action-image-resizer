@@ -56,14 +56,14 @@ const processSourceFile = async (options: ConfigOptions): Promise<boolean> => {
 
         return true
     } catch (e) {
-        core.error(`Cannot process input file image: ${fileName}`)
+        core.error(`Cannot process input file image: ${sourceFile}`)
         throw e
     }
 }
 
 const buildConfigOptions = (options: Partial<ConfigOptions>): ConfigOptions => {
-    const width = options.width || getRequiredProperty('width')
-    const height = options.height || getRequiredProperty('height')
+    const width = options.width || parseInt(getRequiredProperty('width'))
+    const height = options.height || parseInt(getRequiredProperty('height'))
 
     const quality = options.quality || toInt(getProperty('quality'))
 
