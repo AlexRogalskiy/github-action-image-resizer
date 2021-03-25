@@ -15,6 +15,7 @@
 *.zip
 *.tar.gz
 *.rar
+*.map
 **/.DS_Store
 
 # License files
@@ -29,6 +30,7 @@ hs_err_pid*
 .reporting/
 bin/
 tmp/
+dist/*
 build/*
 packages/
 coverage/
@@ -39,3 +41,6 @@ site/
 .cache
 node_modules
 .vercel
+
+# Build files
+!dist/index.js

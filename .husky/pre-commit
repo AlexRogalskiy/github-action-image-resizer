@@ -6,9 +6,9 @@ npm run all
 npm run test:all
 npm run changelog
 
-git add dist/
 git add docs/
 git add src/
 
+git add -f dist/index.js
 git add CHANGELOG.md
 git add package-lock.json
