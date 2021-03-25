@@ -1,4 +1,14 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run lint:staged && npm run all && npm run test:all
+npm run lint:staged
+npm run all
+npm run test:all
+npm run changelog
+
+git add dist/
+git add docs/
+git add src/
+
+git add CHANGELOG.md
+git add package-lock.json
