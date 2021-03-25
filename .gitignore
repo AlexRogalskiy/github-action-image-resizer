@@ -34,7 +34,6 @@ packages/
 coverage/
 test-results/
 target/
-images/
 log/
 site/
 .cache
