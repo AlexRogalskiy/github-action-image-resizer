@@ -26,10 +26,10 @@
 [![Dependabot](https://img.shields.io/badge/dependabot-enabled-1f8ceb.svg?style=flat-square)](https://dependabot.com/)
 [![NewReleases](https://newreleases.io/badge.svg)](https://newreleases.io/github/AlexRogalskiy/github-action-image-resizer)
 [![Hits-of-Code](https://hitsofcode.com/github/alexrogalskiy/github-action-image-resizer?branch=master)](https://hitsofcode.com/github/alexrogalskiy/github-action-image-resizer?branch=master/view?branch=master)
-![CI](https://github.com/AlexRogalskiy/github-action-image-resizer/workflows/CI/badge.svg)
-[![CircleCI](https://circleci.com/gh/AlexRogalskiy/github-action-image-resizer.svg?style=shield)](https://circleci.com/gh/AlexRogalskiy/github-action-image-resizer)
 
 [![codecov](https://codecov.io/gh/AlexRogalskiy/github-action-image-resizer/branch/master/graph/badge.svg?token=uTDmIg0RMh)](https://codecov.io/gh/AlexRogalskiy/github-action-image-resizer)
+[![CI](https://github.com/AlexRogalskiy/github-action-image-resizer/workflows/CI/badge.svg)](https://github.com/AlexRogalskiy/github-action-image-resizer/actions/workflows/build.yml)
+[![CircleCI](https://circleci.com/gh/AlexRogalskiy/github-action-image-resizer.svg?style=shield)](https://circleci.com/gh/AlexRogalskiy/github-action-image-resizer)
 [![GitHub Super-Linter](https://github.com/AlexRogalskiy/github-action-image-resizer/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![ComVer](https://img.shields.io/badge/ComVer-compliant-brightgreen.svg)][repo]
