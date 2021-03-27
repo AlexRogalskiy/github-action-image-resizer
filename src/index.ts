@@ -1,12 +1,12 @@
 import * as core from '@actions/core'
 import { basename, join } from 'path'
-import boxen from 'boxen'
 
 import { ensureDirExists, getConfigOptions } from './utils/files'
 import { isValidFile } from './utils/validators'
 import { mergeProps, toInt } from './utils/commons'
 import { serialize } from './utils/serializers'
 
+import { coreError, coreInfo } from './utils/loggers'
 import { profile } from './utils/profiles'
 
 import { ConfigOptions } from '../typings/domain-types'
@@ -26,16 +26,13 @@ const processSourceFile = async (options: ConfigOptions): Promise<boolean> => {
     const formatOptions = mergeProps(profile.formatOptions, { quality })
     const resizeOptions = mergeProps(profile.resizeOptions, { width, height })
 
-    core.info(
-        boxen(
-            `
+    coreInfo(
+        `
         Processing input source file: [${sourceFile}] with parameters:
         format type=[${formatType}],
         format options=${serialize(formatOptions)},
         resize options=${serialize(resizeOptions)}
-        `,
-            profile.outputOptions
-        )
+        `
     )
 
     ensureDirExists(targetPath)
@@ -50,13 +47,11 @@ const processSourceFile = async (options: ConfigOptions): Promise<boolean> => {
             .toFormat(formatType)
             .toFile(fileName)
 
-        core.info(
-            boxen(`Resizing operation completed with parameters: ${serialize(status)}`, profile.outputOptions)
-        )
+        coreInfo(`Resizing operation completed with parameters: ${serialize(status)}`)
 
         return true
     } catch (e) {
-        core.error(`Cannot process input file image: ${sourceFile}`)
+        coreError(`Cannot process input file image: ${sourceFile}`)
         throw e
     }
 }
@@ -106,7 +101,7 @@ const executeOperation = async (...options: Partial<ConfigOptions>[]): Promise<b
 }
 
 const runResizingOperation = async (): Promise<void> => {
-    const sourceData = './data/sourceData.json' || getProperty('sourceData')
+    const sourceData = getProperty('sourceData')
 
     let status: boolean
     if (isValidFile(sourceData)) {

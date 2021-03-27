@@ -8,7 +8,12 @@ npm run changelog
 
 git add docs/
 git add src/
+git add tests/
+git add typings/
 
 git add -f dist/index.js
+git add -f dist/vendor
+git add -f dist/build
+
 git add CHANGELOG.md
 git add package-lock.json
