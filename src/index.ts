@@ -47,7 +47,7 @@ const processSourceFile = async (options: ConfigOptions): Promise<number> => {
 
         coreInfo(`Resizing operation completed with parameters: ${serialize(result)}`)
 
-        return getFilesizeInBytes(fileName)
+        return await getFilesizeInBytes(fileName)
     } catch (e) {
         coreError(`Cannot process input file image: ${sourceFile}`)
         throw e

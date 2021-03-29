@@ -7,8 +7,8 @@ import {
     existsSync,
     MakeDirectoryOptions,
     mkdirSync,
+    promises,
     readFileSync,
-    statSync,
     writeFile,
 } from 'fs'
 
@@ -93,6 +93,6 @@ export const getFileContent = async (sourceFile: string): Promise<FileData> => {
     throw valueError(`Invalid input source: ${sourceFile}, neither url, nor file`)
 }
 
-export const getFilesizeInBytes = (filename: string): number => {
-    return statSync(filename).size
+export const getFilesizeInBytes = async (filename: string): Promise<number> => {
+    return (await promises.stat(filename)).size
 }
