@@ -43,3 +43,9 @@ export const toInt = (str: string, defaultValue?: number): Optional<number> => {
         return defaultValue
     }
 }
+
+export const getUrlName = (url: string): Optional<string> => {
+    const value = url.split('/').pop()
+
+    return value && value.split('#')[0].split('?')[0]
+}

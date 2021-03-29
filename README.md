@@ -1,6 +1,6 @@
 # _Image Resizer_
 
-> GitHub Action to resize images (jpeg, png, webp, avif, tiff, gif, svg)
+> GitHub Action to resize images (jpeg, png, webp, avif, tiff, gif, svg) from a file or url
 
 [![GitHub marketplace](https://img.shields.io/badge/marketplacegithub-image--resizer-blue?logo=github)](https://github.com/marketplace/actions/image-resizer)
 
@@ -87,7 +87,7 @@
     </a>
 </p>
 
-Provides operations on resizing input image files (jpeg, png, webp, avif, tiff, gif, svg) by format parameters.
+Provides operations on resizing input images from a file or url (jpeg, png, webp, avif, tiff, gif, svg) by format parameters.
 
 ## _Inputs_
 
@@ -100,6 +100,7 @@ Provides operations on resizing input image files (jpeg, png, webp, avif, tiff, 
     {
         "width": 150,
         "height": 250,
+        "quality": 100,
         "formatType": "jpeg",
         "sourceFile": "./data/input.jpg",
         "targetPath": "./data",
@@ -112,6 +113,13 @@ Provides operations on resizing input image files (jpeg, png, webp, avif, tiff, 
         "sourceFile": "./data/input2.png",
         "targetPath": "./data",
         "targetFile": "output2.png"
+    },
+    {
+        "width": 350,
+        "height": 350,
+        "formatType": "jpeg",
+        "sourceFile": "https://lunrjs.com/images/moon.jpg",
+        "targetPath": "./data"
     }
 ]
 ```
@@ -134,7 +142,7 @@ Provides operations on resizing input image files (jpeg, png, webp, avif, tiff, 
 
 ### `sourceFile`
 
-**Required** Source input image file to resize
+**Required** Source input image file or url to fetch content from
 
 ### `targetPath`
 

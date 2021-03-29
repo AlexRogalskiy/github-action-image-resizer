@@ -1,5 +1,5 @@
 name: 'Image Resizer'
-description: 'Provides operations on resizing input image files (jpeg, png, webp, avif, tiff, gif, svg) by format parameters.'
+description: 'Provides operations on resizing input images from a file or url (jpeg, png, webp, avif, tiff, gif, svg) by format parameters.'
 author: 'AlexRogalskiy'
 
 inputs:
@@ -19,7 +19,7 @@ inputs:
     description: 'String representing target image format type (heic, heif, avif, jpeg, png, raw, tiff, webp, gif)'
     required: true
   sourceFile:
-    description: 'Source input image file to resize'
+    description: 'Source input image file or url to fetch content from'
     required: true
   targetPath:
     description: 'Target path to store processed image files'

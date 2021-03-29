@@ -1,6 +1,6 @@
 import { Optional } from '../../typings/standard-types'
 
-import { checkFileExists } from './files'
+import { isFileExists } from './files'
 
 export const getType = (obj: any): string => {
     return {}.toString
@@ -80,6 +80,16 @@ export const isBlankString = (value: string): boolean => {
     return !value || /^\s*$/.test(value)
 }
 
-export const isValidFile = (fileName: string, extension = '.json'): boolean => {
-    return !isBlankString(fileName) && fileName.endsWith(extension) && checkFileExists(fileName)
+export const isValidFile = (fileName: string, extension = ''): boolean => {
+    return !isBlankString(fileName) && fileName.endsWith(extension) && isFileExists(fileName)
+}
+
+export const isValidUrl = (value: string): boolean => {
+    try {
+        new URL(value)
+
+        return true
+    } catch (e) {
+        return false
+    }
 }

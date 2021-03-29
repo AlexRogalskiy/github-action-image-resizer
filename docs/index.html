@@ -60,7 +60,7 @@
 					<h1><em>Image Resizer</em></h1>
 				</a>
 				<blockquote>
-					<p>GitHub Action to resize images (jpeg, png, webp, avif, tiff, gif, svg)</p>
+					<p>GitHub Action to resize images (jpeg, png, webp, avif, tiff, gif, svg) from a file or url</p>
 				</blockquote>
 				<p><a href="https://github.com/marketplace/actions/image-resizer"><img src="https://img.shields.io/badge/marketplacegithub-image--resizer-blue?logo=github" alt="GitHub marketplace"></a></p>
 				<p><a href="https://github.com/lekterable/perfekt"><img src="https://img.shields.io/badge/management-perfekt%F0%9F%91%8C-red.svg" alt="management: perfekt👌"></a>
@@ -83,10 +83,11 @@
 					<a href="https://renovatebot.com/"><img src="https://badgen.net/badge/renovate/enabled/green?cache=300" alt="Renovatebot"></a>
 					<a href="https://dependabot.com/"><img src="https://img.shields.io/badge/dependabot-enabled-1f8ceb.svg?style=flat-square" alt="Dependabot"></a>
 					<a href="https://newreleases.io/github/AlexRogalskiy/github-action-image-resizer"><img src="https://newreleases.io/badge.svg" alt="NewReleases"></a>
-					<a href="https://hitsofcode.com/github/alexrogalskiy/github-action-image-resizer?branch=master/view?branch=master"><img src="https://hitsofcode.com/github/alexrogalskiy/github-action-image-resizer?branch=master" alt="Hits-of-Code"></a>
-					<img src="https://github.com/AlexRogalskiy/github-action-image-resizer/workflows/CI/badge.svg" alt="CI">
-				<a href="https://circleci.com/gh/AlexRogalskiy/github-action-image-resizer"><img src="https://circleci.com/gh/AlexRogalskiy/github-action-image-resizer.svg?style=shield" alt="CircleCI"></a></p>
-				<p><a href="https://github.com/marketplace/actions/super-linter"><img src="https://github.com/AlexRogalskiy/github-action-image-resizer/workflows/Lint%20Code%20Base/badge.svg" alt="GitHub Super-Linter"></a>
+				<a href="https://hitsofcode.com/github/alexrogalskiy/github-action-image-resizer?branch=master/view?branch=master"><img src="https://hitsofcode.com/github/alexrogalskiy/github-action-image-resizer?branch=master" alt="Hits-of-Code"></a></p>
+				<p><a href="https://codecov.io/gh/AlexRogalskiy/github-action-image-resizer"><img src="https://codecov.io/gh/AlexRogalskiy/github-action-image-resizer/branch/master/graph/badge.svg?token=uTDmIg0RMh" alt="codecov"></a>
+					<a href="https://github.com/AlexRogalskiy/github-action-image-resizer/actions/workflows/build.yml"><img src="https://github.com/AlexRogalskiy/github-action-image-resizer/workflows/CI/badge.svg" alt="CI"></a>
+					<a href="https://circleci.com/gh/AlexRogalskiy/github-action-image-resizer"><img src="https://circleci.com/gh/AlexRogalskiy/github-action-image-resizer.svg?style=shield" alt="CircleCI"></a>
+					<a href="https://github.com/marketplace/actions/super-linter"><img src="https://github.com/AlexRogalskiy/github-action-image-resizer/workflows/Lint%20Code%20Base/badge.svg" alt="GitHub Super-Linter"></a>
 					<a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" alt="Commitizen friendly"></a>
 					<a href="https://github.com/AlexRogalskiy/github-action-image-resizer"><img src="https://img.shields.io/badge/ComVer-compliant-brightgreen.svg" alt="ComVer"></a>
 					<a href="https://github.com/search?o=desc&amp;q=AlexRogalskiy/github-action-image-resizer+path%3A.github%2Fworkflows+language%3AYAML&amp;s=&amp;type=Code"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fapi-git-master.endbug.vercel.app%2Fapi%2Fgithub-actions%2Fused-by%3Faction%3DAlexRogalskiy%2Fgithub-action-image-resizer%26badge%3Dtrue" alt="Public workflows that use this action."></a>
@@ -150,7 +151,7 @@
 						<img src="https://badges.pufler.dev/updated/AlexRogalskiy/github-action-image-resizer" alt="Project updated status" />
 					</a>
 				</p>
-				<p>Provides operations on resizing input image files (jpeg, png, webp, avif, tiff, gif, svg) by format parameters.</p>
+				<p>Provides operations on resizing input images from a file or url (jpeg, png, webp, avif, tiff, gif, svg) by format parameters.</p>
 				<a href="#inputs" id="inputs" style="color: inherit; text-decoration: none;">
 					<h2><em>Inputs</em></h2>
 				</a>
@@ -162,6 +163,7 @@
 <span style="color: #D4D4D4">    {</span>
 <span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;width&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #B5CEA8">150</span><span style="color: #D4D4D4">,</span>
 <span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;height&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #B5CEA8">250</span><span style="color: #D4D4D4">,</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;quality&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #B5CEA8">100</span><span style="color: #D4D4D4">,</span>
 <span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;formatType&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;jpeg&quot;</span><span style="color: #D4D4D4">,</span>
 <span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;sourceFile&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;./data/input.jpg&quot;</span><span style="color: #D4D4D4">,</span>
 <span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;targetPath&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;./data&quot;</span><span style="color: #D4D4D4">,</span>
@@ -174,6 +176,13 @@
 <span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;sourceFile&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;./data/input2.png&quot;</span><span style="color: #D4D4D4">,</span>
 <span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;targetPath&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;./data&quot;</span><span style="color: #D4D4D4">,</span>
 <span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;targetFile&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;output2.png&quot;</span>
+<span style="color: #D4D4D4">    },</span>
+<span style="color: #D4D4D4">    {</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;width&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #B5CEA8">350</span><span style="color: #D4D4D4">,</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;height&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #B5CEA8">350</span><span style="color: #D4D4D4">,</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;formatType&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;jpeg&quot;</span><span style="color: #D4D4D4">,</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;sourceFile&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;https://lunrjs.com/images/moon.jpg&quot;</span><span style="color: #D4D4D4">,</span>
+<span style="color: #D4D4D4">        </span><span style="color: #9CDCFE">&quot;targetPath&quot;</span><span style="color: #D4D4D4">: </span><span style="color: #CE9178">&quot;./data&quot;</span>
 <span style="color: #D4D4D4">    }</span>
 <span style="color: #D4D4D4">]</span>
 </code></pre>
@@ -196,7 +205,7 @@
 				<a href="#sourcefile" id="sourcefile" style="color: inherit; text-decoration: none;">
 					<h3><code>sourceFile</code></h3>
 				</a>
-				<p><strong>Required</strong> Source input image file to resize</p>
+				<p><strong>Required</strong> Source input image file or url to fetch content from</p>
 				<a href="#targetpath" id="targetpath" style="color: inherit; text-decoration: none;">
 					<h3><code>targetPath</code></h3>
 				</a>
@@ -322,7 +331,10 @@
 						<a href="modules/src_utils_files.html">src/utils/files</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/src_utils_profile.html">src/utils/profiles</a>
+						<a href="modules/src_utils_loggers.html">src/utils/loggers</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_utils_profiles.html">src/utils/profiles</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/src_utils_serializers.html">src/utils/serializers</a>

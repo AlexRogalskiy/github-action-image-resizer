@@ -1,7 +1,8 @@
 import * as core from '@actions/core'
-import { basename, join } from 'path'
+import { createWriteStream } from 'fs'
+import { join } from 'path'
 
-import { ensureDirExists, getConfigOptions } from './utils/files'
+import { ensureDirExists, getConfigOptions, getFileContent, getFilesizeInBytes } from './utils/files'
 import { isValidFile } from './utils/validators'
 import { mergeProps, toInt } from './utils/commons'
 import { serialize } from './utils/serializers'
@@ -20,8 +21,8 @@ const sharp = (globals => {
     // eslint-disable-next-line @typescript-eslint/no-var-requires,@typescript-eslint/no-require-imports
 })(require('sharp'))
 
-const processSourceFile = async (options: ConfigOptions): Promise<boolean> => {
-    const { width, height, quality, formatType, sourceFile, targetPath, targetFile } = options
+const processSourceFile = async (options: ConfigOptions): Promise<number> => {
+    const { width, height, quality, formatType, sourceFile, fileStream, targetPath, targetFile } = options
 
     const formatOptions = mergeProps(profile.formatOptions, { quality })
     const resizeOptions = mergeProps(profile.resizeOptions, { width, height })
@@ -35,39 +36,38 @@ const processSourceFile = async (options: ConfigOptions): Promise<boolean> => {
         `
     )
 
-    ensureDirExists(targetPath)
-
-    const fileName = join(targetPath, targetFile)
-
     try {
-        const status = await sharp(sourceFile, formatOptions)
-            .trim()
-            .resize(resizeOptions)
-            .withMetadata()
-            .toFormat(formatType)
-            .toFile(fileName)
+        const fileName = join(targetPath, targetFile)
+        ensureDirExists(targetPath)
 
-        coreInfo(`Resizing operation completed with parameters: ${serialize(status)}`)
+        const writable = createWriteStream(fileName)
+        const pipeline = sharp(formatOptions).trim().resize(resizeOptions).withMetadata().toFormat(formatType)
 
-        return true
+        const result = await fileStream.pipe(pipeline).pipe(writable)
+
+        coreInfo(`Resizing operation completed with parameters: ${serialize(result)}`)
+
+        return getFilesizeInBytes(fileName)
     } catch (e) {
         coreError(`Cannot process input file image: ${sourceFile}`)
         throw e
     }
 }
 
-const buildConfigOptions = (options: Partial<ConfigOptions>): ConfigOptions => {
+const buildConfigOptions = async (options: Partial<ConfigOptions>): Promise<ConfigOptions> => {
     const width = options.width || parseInt(getRequiredProperty('width'))
     const height = options.height || parseInt(getRequiredProperty('height'))
 
     const quality = options.quality || toInt(getProperty('quality'))
 
-    const formatData = options.formatType || getRequiredProperty('formatType')
-    const formatType = FormatPattern[formatData]
+    const formatType = options.formatType || FormatPattern[getRequiredProperty('formatType')]
 
     const sourceFile = options.sourceFile || getRequiredProperty('sourceFile')
+
+    const { fileName, fileStream } = await getFileContent(sourceFile)
+
     const targetPath = options.targetPath || getRequiredProperty('targetPath')
-    const targetFile = options.targetFile || getProperty('targetFile') || basename(sourceFile)
+    const targetFile = options.targetFile || getProperty('targetFile') || fileName
 
     return {
         width,
@@ -75,6 +75,7 @@ const buildConfigOptions = (options: Partial<ConfigOptions>): ConfigOptions => {
         quality,
         formatType,
         sourceFile,
+        fileStream,
         targetPath,
         targetFile,
     }
@@ -88,23 +89,30 @@ const getProperty = (property: string, options?: core.InputOptions): string => {
     return core.getInput(property, options)
 }
 
+const getOperationStatus = async (option: Partial<ConfigOptions>): Promise<boolean> => {
+    const options = await buildConfigOptions(option)
+    const result = await processSourceFile(options)
+
+    return result > 0
+}
+
 const executeOperation = async (...options: Partial<ConfigOptions>[]): Promise<boolean> => {
-    const result: boolean[] = []
+    const promises: Promise<boolean>[] = []
 
     for (const option of options) {
-        const options = buildConfigOptions(option)
-        const status = await processSourceFile(options)
-        result.push(status)
+        promises.push(getOperationStatus(option))
     }
+
+    const result = await Promise.all(promises)
 
     return result.every(value => value)
 }
 
 const runResizingOperation = async (): Promise<void> => {
-    const sourceData = getProperty('sourceData')
+    const sourceData = './data/sourceData.json' || getProperty('sourceData')
 
     let status: boolean
-    if (isValidFile(sourceData)) {
+    if (isValidFile(sourceData, '.json')) {
         const options = getConfigOptions(sourceData)
         status = await executeOperation(...options)
     } else {

@@ -19,7 +19,7 @@
         "removeComments": false,
         "allowSyntheticDefaultImports": true,
         "downlevelIteration": true,
-        "lib": ["esnext"],
+        "lib": ["esnext", "dom"],
         "typeRoots": ["node_modules/@types", "./typings"],
         "target": "ESNext",
         "module": "ESNext",

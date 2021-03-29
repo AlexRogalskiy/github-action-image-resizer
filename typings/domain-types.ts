@@ -4,6 +4,14 @@ import { FormatPattern } from './enum-types'
 import { Optional } from './standard-types'
 
 /**
+ * PipedStream
+ * @desc Type representing piped stream
+ */
+export type PipedStream = {
+    pipe<T>(destination: T, options?: { end?: boolean }): T
+}
+
+/**
  * ConfigOptions
  * @desc Type representing configuration options
  */
@@ -24,6 +32,10 @@ export type ConfigOptions = {
      * Target image quality
      */
     readonly quality?: Optional<number>
+    /**
+     * Source file content
+     */
+    readonly fileStream: PipedStream
     /**
      * Source file to process
      */

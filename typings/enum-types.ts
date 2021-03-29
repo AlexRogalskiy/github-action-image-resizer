@@ -16,6 +16,7 @@ export enum FormatPattern {
     heic = 'heic',
     heif = 'heif',
     avif = 'avif',
+    jpg = 'jpeg',
     jpeg = 'jpeg',
     png = 'png',
     raw = 'raw',
