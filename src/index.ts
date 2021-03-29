@@ -1,8 +1,13 @@
 import * as core from '@actions/core'
-import { createWriteStream } from 'fs'
 import { join } from 'path'
 
-import { ensureDirExists, getConfigOptions, getFileContent, getFilesizeInBytes } from './utils/files'
+import {
+    createWritableStream,
+    ensureDirExists,
+    getConfigOptions,
+    getFileContent,
+    getSizeInBytesAsync,
+} from './utils/files'
 import { isValidFile } from './utils/validators'
 import { mergeProps, toInt } from './utils/commons'
 import { serialize } from './utils/serializers'
@@ -21,7 +26,7 @@ const sharp = (globals => {
     // eslint-disable-next-line @typescript-eslint/no-var-requires,@typescript-eslint/no-require-imports
 })(require('sharp'))
 
-const processSourceFile = async (options: ConfigOptions): Promise<number> => {
+const processSourceFile = async (options: ConfigOptions): Promise<string> => {
     const { width, height, quality, formatType, sourceFile, fileStream, targetPath, targetFile } = options
 
     const formatOptions = mergeProps(profile.formatOptions, { quality })
@@ -38,16 +43,17 @@ const processSourceFile = async (options: ConfigOptions): Promise<number> => {
 
     try {
         const fileName = join(targetPath, targetFile)
+
         ensureDirExists(targetPath)
 
-        const writable = createWriteStream(fileName)
+        const writable = createWritableStream(fileName)
         const pipeline = sharp(formatOptions).trim().resize(resizeOptions).withMetadata().toFormat(formatType)
 
         const result = await fileStream.pipe(pipeline).pipe(writable)
 
         coreInfo(`Resizing operation completed with parameters: ${serialize(result)}`)
 
-        return await getFilesizeInBytes(fileName)
+        return fileName
     } catch (e) {
         coreError(`Cannot process input file image: ${sourceFile}`)
         throw e
@@ -89,27 +95,26 @@ const getProperty = (property: string, options?: core.InputOptions): string => {
     return core.getInput(property, options)
 }
 
-const getOperationStatus = async (option: Partial<ConfigOptions>): Promise<boolean> => {
+const getOperationStatus = async (option: Partial<ConfigOptions>): Promise<string> => {
     const options = await buildConfigOptions(option)
-    const result = await processSourceFile(options)
 
-    return result > 0
+    return await processSourceFile(options)
 }
 
 const executeOperation = async (...options: Partial<ConfigOptions>[]): Promise<boolean> => {
-    const promises: Promise<boolean>[] = []
+    const promises: Promise<string>[] = []
 
     for (const option of options) {
         promises.push(getOperationStatus(option))
     }
 
-    const result = await Promise.all(promises)
+    const files = await Promise.all(promises)
 
-    return result.every(value => value)
+    return files.every(async value => (await getSizeInBytesAsync(value)) > 0)
 }
 
 const runResizingOperation = async (): Promise<void> => {
-    const sourceData = './data/sourceData.json' || getProperty('sourceData')
+    const sourceData = getProperty('sourceData')
 
     let status: boolean
     if (isValidFile(sourceData, '.json')) {

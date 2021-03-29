@@ -2,14 +2,19 @@ import got from 'got'
 import { basename, join } from 'path'
 import {
     accessSync,
+    closeSync,
     constants,
     createReadStream,
+    createWriteStream,
     existsSync,
     MakeDirectoryOptions,
     mkdirSync,
+    openSync,
     promises,
     readFileSync,
+    statSync,
     writeFile,
+    WriteStream,
 } from 'fs'
 
 import { ConfigOptions, PipedStream } from '../../typings/domain-types'
@@ -93,6 +98,16 @@ export const getFileContent = async (sourceFile: string): Promise<FileData> => {
     throw valueError(`Invalid input source: ${sourceFile}, neither url, nor file`)
 }
 
-export const getFilesizeInBytes = async (filename: string): Promise<number> => {
+export const getSizeInBytesAsync = async (filename: string): Promise<number> => {
     return (await promises.stat(filename)).size
+}
+
+export const getSizeInBytes = (filename: string): number => {
+    return statSync(filename).size
+}
+
+export const createWritableStream = (filename: string): WriteStream => {
+    closeSync(openSync(filename, 'w'))
+
+    return createWriteStream(filename, { flags: 'w' })
 }
