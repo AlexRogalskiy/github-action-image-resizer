@@ -54,15 +54,15 @@ const processSourceFile = async (options: ConfigOptions): Promise<string> => {
         coreInfo(`Resizing operation completed with parameters: ${serialize(result)}`)
 
         return fileName
-    } catch (e) {
+    } catch (error) {
         coreError(`Cannot process input file image: ${sourceFile}`)
-        throw e
+        throw error
     }
 }
 
 const buildConfigOptions = async (options: Partial<ConfigOptions>): Promise<ConfigOptions> => {
-    const width = options.width || parseInt(getRequiredProperty('width'))
-    const height = options.height || parseInt(getRequiredProperty('height'))
+    const width = options.width || toInt(getRequiredProperty('width'))
+    const height = options.height || toInt(getRequiredProperty('height'))
 
     const quality = options.quality || toInt(getProperty('quality'))
 
@@ -130,8 +130,8 @@ const runResizingOperation = async (): Promise<void> => {
 export default async function run(): Promise<void> {
     try {
         await runResizingOperation()
-    } catch (e) {
-        core.setFailed(`Cannot process input image data, message: ${e.message}`)
+    } catch (error) {
+        core.setFailed(`Cannot process input image data, message: ${error.message}`)
     }
 }
 

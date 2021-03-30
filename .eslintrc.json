@@ -1,6 +1,22 @@
 {
-    "plugins": ["jest", "@typescript-eslint", "spellcheck"],
-    "extends": ["plugin:github/recommended"],
+    "plugins": ["jest", "@typescript-eslint", "spellcheck", "eslint-comments", "unicorn"],
+    "settings": {
+        "import/parsers": {
+            "@typescript-eslint/parser": [".ts", ".js"]
+        },
+        "import/resolver": {
+            "typescript": {}
+        }
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:github/recommended",
+        "plugin:eslint-comments/recommended",
+        "plugin:unicorn/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
+        "prettier/@typescript-eslint"
+    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 9,
@@ -27,6 +43,7 @@
         "no-alert": "error",
         "no-caller": "error",
         "no-eval": "error",
+        "no-undef": "warn",
         "no-implied-eval": "error",
         "no-extend-native": "error",
         "no-implicit-globals": "error",
@@ -37,10 +54,14 @@
         "keyword-spacing": "error",
         "eslint-comments/no-use": "off",
         "import/no-namespace": "off",
+        "import/namespace": "off",
         "no-unused-vars": "off",
         "camelcase": "off",
         "no-invalid-this": "off",
         "no-angle-bracket-type-assertion": "off",
+        "unicorn/filename-case": "off",
+        "unicorn/prevent-abbreviations": "off",
+        "unicorn/no-nested-ternary": "off",
         "spellcheck/spell-checker": [
             "off",
             {
@@ -121,6 +142,7 @@
                 "allowSingleLine": true
             }
         ],
+        "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/no-unused-vars": "error",
         "@typescript-eslint/explicit-member-accessibility": [
             "error",

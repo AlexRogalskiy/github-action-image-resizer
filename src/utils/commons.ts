@@ -25,7 +25,7 @@ const objToString = (obj: any, defaultValue = 'null'): string => {
             res += `${key} => ${typeof value === 'object' ? `[${objToString(value)}]` : `${value}, `}`
         }
         if (++i === entries.length) {
-            res = res.substring(0, res.length - 2)
+            res = res.slice(0, Math.max(0, res.length - 2))
         }
     }
 
@@ -36,10 +36,10 @@ export const isInRange = (actual: number, min: number, max: number): boolean => 
     return actual >= min && actual <= max
 }
 
-export const toInt = (str: string, defaultValue?: number): Optional<number> => {
+export const toInt = (str: string, defaultValue = 0): number => {
     try {
         return parseInt(str) || defaultValue
-    } catch (e) {
+    } catch (error) {
         return defaultValue
     }
 }

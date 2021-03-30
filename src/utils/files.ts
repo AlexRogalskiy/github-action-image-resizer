@@ -19,6 +19,7 @@ import {
 
 import { ConfigOptions, PipedStream } from '../../typings/domain-types'
 
+import { coreInfo } from './loggers'
 import { getUrlName } from './commons'
 import { deserialize, serialize } from './serializers'
 import { isValidFile, isValidUrl } from './validators'
@@ -55,7 +56,7 @@ export const storeDataAsJson = async (filePath: string, fileName: string, data: 
 
     const targetPath = join(filePath, fileName)
 
-    console.log(`Storing JSON data to target file: ${targetPath}`)
+    coreInfo(`Storing JSON data to target file: ${targetPath}`)
 
     writeFile(targetPath, serialize(data), err => {
         if (err) {
@@ -69,7 +70,7 @@ export const isFileExists = (fileName: string, mode = constants.F_OK | constants
         accessSync(fileName, mode)
 
         return true
-    } catch (err) {
+    } catch (error) {
         return false
     }
 }

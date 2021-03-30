@@ -42,7 +42,7 @@ jobs:
 
       - name: Build project
         run: |
-          pnpm run all --if-present
+          pnpm run build --if-present
 
       - name: Run tests
         run: |
