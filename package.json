@@ -68,7 +68,7 @@
         "cz-conventional-changelog": "^3.3.0",
         "conventional-changelog-cli": "^2.0.0",
         "del-cli": "^3.0.1",
-        "editorconfig-checker": "3.3.0",
+        "editorconfig-checker": "4.0.2",
         "license-checker": "^25.0.1",
         "eslint": "^7.19.0",
         "eslint-plugin-unicorn": "^17.2.0",
