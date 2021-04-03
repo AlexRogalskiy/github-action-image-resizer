@@ -93,7 +93,9 @@ Provides operations on resizing input images from a file or url (jpeg, png, webp
 
 ### `sourceData`
 
-**Optional** JSON data source file with following action parameters (just for actual example):
+**Optional** JSON data source file with action parameters:
+
+#### Complete parameters
 
 ```json
 [
@@ -113,6 +115,34 @@ Provides operations on resizing input images from a file or url (jpeg, png, webp
         "sourceFile": "./data/input2.png",
         "targetPath": "./data",
         "targetFile": "output2.png"
+    },
+    {
+        "width": 350,
+        "height": 350,
+        "formatType": "jpeg",
+        "sourceFile": "https://lunrjs.com/images/moon.jpg",
+        "targetPath": "./data"
+    }
+]
+```
+
+#### Basic parameters
+
+```json
+[
+    {
+        "width": 150,
+        "height": 250,
+        "formatType": "jpeg",
+        "sourceFile": "./data/input.jpg",
+        "targetPath": "./data"
+    },
+    {
+        "width": 250,
+        "height": 250,
+        "formatType": "png",
+        "sourceFile": "./data/input2.png",
+        "targetPath": "./data"
     },
     {
         "width": 350,
