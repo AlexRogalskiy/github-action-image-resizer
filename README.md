@@ -10,7 +10,8 @@
 [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 [![Chat](https://img.shields.io/badge/chat-discussions-success.svg)](https://github.com/AlexRogalskiy/github-action-image-resizer/discussions)
 
-[![DeepScan grade](https://deepscan.io/api/teams/11946/projects/16314/branches/347248/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=11946&pid=16314&bid=347248)
+[![DeepSource](https://deepsource.io/gh/AlexRogalskiy/github-action-image-resizer.svg/?label=active+issues\&show_trend=true)](https://deepsource.io/gh/AlexRogalskiy/github-action-image-resizer/?ref=repository-badge)
+[![DeepScan grade](https://deepscan.io/api/teams/11946/projects/16314/branches/347248/badge/grade.svg)](https://deepscan.io/dashboard#view=project\&tid=11946\&pid=16314\&bid=347248)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/AlexRogalskiy/github-action-image-resizer)
 ![GitHub Release Date](https://img.shields.io/github/release-date/AlexRogalskiy/github-action-image-resizer)
 ![Lines of code](https://tokei.rs/b1/github/AlexRogalskiy/github-action-image-resizer?category=lines)
@@ -26,6 +27,8 @@
 [![Dependabot](https://img.shields.io/badge/dependabot-enabled-1f8ceb.svg?style=flat-square)](https://dependabot.com/)
 [![NewReleases](https://newreleases.io/badge.svg)](https://newreleases.io/github/AlexRogalskiy/github-action-image-resizer)
 [![Hits-of-Code](https://hitsofcode.com/github/alexrogalskiy/github-action-image-resizer?branch=master)](https://hitsofcode.com/github/alexrogalskiy/github-action-image-resizer?branch=master/view?branch=master)
+[![dependencies Status](https://status.david-dm.org/gh/AlexRogalskiy/github-action-image-resizer.svg)](https://david-dm.org/AlexRogalskiy/github-action-image-resizer)
+[![dependencies Status](https://status.david-dm.org/gh/AlexRogalskiy/github-action-image-resizer.svg)](https://david-dm.org/AlexRogalskiy/github-action-image-resizer?type=dev)
 
 [![codecov](https://codecov.io/gh/AlexRogalskiy/github-action-image-resizer/branch/master/graph/badge.svg?token=uTDmIg0RMh)](https://codecov.io/gh/AlexRogalskiy/github-action-image-resizer)
 [![CI](https://github.com/AlexRogalskiy/github-action-image-resizer/workflows/CI/badge.svg)](https://github.com/AlexRogalskiy/github-action-image-resizer/actions/workflows/build.yml)
@@ -42,35 +45,27 @@
 
 ## *Table of contents*
 
-<!--ts-->
-   * [<em>Image Resizer</em>](#image-resizer)
-      * [<em>Table of contents</em>](#table-of-contents)
-      * [<em>Description</em>](#description)
-      * [<em>Inputs</em>](#inputs)
-         * [sourceData](#sourcedata)
-            * [Complete parameters](#complete-parameters)
-            * [Basic parameters](#basic-parameters)
-         * [width](#width)
-         * [height](#height)
-         * [quality](#quality)
-         * [formatType](#formattype)
-         * [sourceFile](#sourcefile)
-         * [targetPath](#targetpath)
-         * [targetFile](#targetfile)
-      * [<em>Outputs</em>](#outputs)
-         * [changed](#changed)
-            * [true](#true)
-            * [false](#false)
-      * [<em>Examples</em>](#examples)
-      * [<em>Visitor stats</em>](#visitor-stats)
-      * [<em>Licensing</em>](#licensing)
-      * [<em>Authors</em>](#authors)
-      * [<em>Versioning</em>](#versioning)
-      * [<em>Contribution</em>](#contribution)
-      * [<em>Acknowledgement</em>](#acknowledgement)
-      * [<em>Forks</em>](#forks)
-      * [<em>Development Support</em>](#development-support)
-<!--te-->
+- [*Description*](#description)
+- [*Inputs*](#inputs)
+  - [`sourceData`](#sourcedata)
+  - [`width`](#width)
+  - [`height`](#height)
+  - [`quality`](#quality)
+  - [`formatType`](#formattype)
+  - [`sourceFile`](#sourcefile)
+  - [`targetPath`](#targetpath)
+  - [`targetFile`](#targetfile)
+- [*Outputs*](#outputs)
+  - [`changed`](#changed)
+- [*Examples*](#examples)
+- [*Visitor stats*](#visitor-stats)
+- [*Licensing*](#licensing)
+- [*Authors*](#authors)
+- [*Versioning*](#versioning)
+- [*Contribution*](#contribution)
+- [*Acknowledgement*](#acknowledgement)
+- [*Forks*](#forks)
+- [*Development Support*](#development-support)
 
 ## *Description*
 
@@ -217,7 +212,7 @@ Running locally:
 
 ## *Visitor stats*
 
-[![GitHub page hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FAlexRogalskiy%2Fgithub-action-image-resizer&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=true)](https://hits.seeyoufarm.com)
+[![GitHub page hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FAlexRogalskiy%2Fgithub-action-image-resizer\&count_bg=%2379C83D\&title_bg=%23555555\&icon=\&icon_color=%23E7E7E7\&title=hits\&edge_flat=true)](https://hits.seeyoufarm.com)
 
 ![GitHub stars](https://img.shields.io/github/stars/AlexRogalskiy/github-action-image-resizer?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/AlexRogalskiy/github-action-image-resizer?style=social)
@@ -246,7 +241,7 @@ this repository][tags].
 
 ## *Contribution*
 
-[![Contributors Display](https://badges.pufler.dev/contributors/AlexRogalskiy/github-action-image-resizer?size=50&padding=5&bots=true)](https://badges.pufler.dev)
+[![Contributors Display](https://badges.pufler.dev/contributors/AlexRogalskiy/github-action-image-resizer?size=50\&padding=5\&bots=true)](https://badges.pufler.dev)
 
 Please read
 [CONTRIBUTING.md](https://github.com/AlexRogalskiy/github-action-image-resizer/blob/master/.github/CONTRIBUTING.md)
@@ -273,15 +268,15 @@ See also the list of [contributors][contributors] who participated in this proje
 
 Like ***Image Resizer*** ? Consider buying me a coffee :)
 
-[![Become a Patron](https://img.shields.io/badge/Become_Patron-Support_me_on_Patreon-blue.svg?style=flat-square&logo=patreon&color=e64413)](https://www.patreon.com/alexrogalskiy)
+[![Become a Patron](https://img.shields.io/badge/Become_Patron-Support_me_on_Patreon-blue.svg?style=flat-square\&logo=patreon\&color=e64413)](https://www.patreon.com/alexrogalskiy)
 [![Buy Me A Coffee](https://img.shields.io/badge/Donate-Buy%20me%20a%20coffee-yellow.svg?logo=buy%20me%20a%20coffee)](https://www.buymeacoffee.com/AlexRogalskiy)
 [![KoFi](https://img.shields.io/badge/Donate-Buy%20me%20a%20coffee-yellow.svg?logo=ko-fi)](https://ko-fi.com/alexrogalskiy)
 
 ***
 
-[![forthebadge](https://img.shields.io/badge/made%20with-%20typescript-C1282D.svg?logo=typescript&style=for-the-badge)](https://www.typescriptlang.org/)
-[![forthebadge](https://img.shields.io/badge/powered%20by-%20github-7116FB.svg?logo=github&style=for-the-badge)](https://github.com/)
-[![forthebadge](https://img.shields.io/badge/build%20with-%20%E2%9D%A4-B6FF9B.svg?logo=heart&style=for-the-badge)](https://forthebadge.com/)
+[![forthebadge](https://img.shields.io/badge/made%20with-%20typescript-C1282D.svg?logo=typescript\&style=for-the-badge)](https://www.typescriptlang.org/)
+[![forthebadge](https://img.shields.io/badge/powered%20by-%20github-7116FB.svg?logo=github\&style=for-the-badge)](https://github.com/)
+[![forthebadge](https://img.shields.io/badge/build%20with-%20%E2%9D%A4-B6FF9B.svg?logo=heart\&style=for-the-badge)](https://forthebadge.com/)
 
 [repo]: https://github.com/AlexRogalskiy/github-action-image-resizer
 

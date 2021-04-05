@@ -15,5 +15,6 @@ git add -f dist/index.js
 git add -f dist/vendor
 git add -f dist/build
 
+git add README.md
 git add CHANGELOG.md
 git add package-lock.json
