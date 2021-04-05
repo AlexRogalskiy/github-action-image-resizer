@@ -13,7 +13,7 @@ enabled = true
 
   [analyzers.meta]
   dialect = "typescript"
-  ecma_version = 2020
+  ecma_version = "2020"
   style_guide = "airbnb"
   environment = [
     "nodejs",
