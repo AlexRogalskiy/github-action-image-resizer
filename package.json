@@ -41,7 +41,7 @@
         "test:watch": "env-cmd --silent -e test jest --watch",
         "test:license": "license-checker --production --summary --unknown --onlyAllow=\"Apache-2.0;BSD;ISC;MIT;UNLICENSED;\"",
         "lint:all": "npm run lint:clean && npm run lint && npm run lint:md && npm run lint:json",
-        "format:all": "npm run format",
+        "format:all": "npm run format && npm run format:md",
         "check:all": "npm run format:check",
         "test:all": "npm run test && npm run test:folio && npm run test:license",
         "all": "npm run format:all && npm run lint:all && npm run pretty && npm run build"
@@ -64,7 +64,7 @@
         "@types/lodash.mergewith": "^4.6.6",
         "@types/node": "^14.14.35",
         "@types/prettier": "^2.1.5",
-        "@typescript-eslint/eslint-plugin": "^4.15.0",
+        "@typescript-eslint/eslint-plugin": "^4.21.0",
         "@typescript-eslint/parser": "^4.15.0",
         "@typescript-eslint/typescript-estree": "^4.17.0",
         "@vercel/ncc": "~>0.27.0",
@@ -175,5 +175,8 @@
         "commitizen": {
             "path": "./node_modules/cz-conventional-changelog"
         }
-    }
+    },
+    "files": [
+        "dist/**"
+    ]
 }
