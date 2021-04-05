@@ -41,7 +41,7 @@
         "test:watch": "env-cmd --silent -e test jest --watch",
         "test:license": "license-checker --production --summary --unknown --onlyAllow=\"Apache-2.0;BSD;ISC;MIT;UNLICENSED;\"",
         "lint:all": "npm run lint:clean && npm run lint && npm run lint:md && npm run lint:json",
-        "format:all": "npm run format && npm run format:md",
+        "format:all": "npm run format",
         "check:all": "npm run format:check",
         "test:all": "npm run test && npm run test:folio && npm run test:license",
         "all": "npm run format:all && npm run lint:all && npm run pretty && npm run build"
