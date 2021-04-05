@@ -1,4 +1,4 @@
-# _Image Resizer_
+# *Image Resizer*
 
 > GitHub Action to resize images (jpeg, png, webp, avif, tiff, gif, svg) from a file or url
 
@@ -10,7 +10,7 @@
 [![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
 [![Chat](https://img.shields.io/badge/chat-discussions-success.svg)](https://github.com/AlexRogalskiy/github-action-image-resizer/discussions)
 
-[![DeepScan grade](https://deepscan.io/api/teams/11946/projects/16314/branches/347248/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=11946&pid=16314&bid=347248)
+[![DeepScan grade](https://deepscan.io/api/teams/11946/projects/16314/branches/347248/badge/grade.svg)](https://deepscan.io/dashboard#view=project\&tid=11946\&pid=16314\&bid=347248)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/AlexRogalskiy/github-action-image-resizer)
 ![GitHub Release Date](https://img.shields.io/github/release-date/AlexRogalskiy/github-action-image-resizer)
 ![Lines of code](https://tokei.rs/b1/github/AlexRogalskiy/github-action-image-resizer?category=lines)
@@ -40,37 +40,31 @@
 [![Open questions](https://img.shields.io/badge/Open-questions-blue.svg?style=flat-curved)](https://github.com/AlexRogalskiy/github-action-image-resizer/labels/question)
 [![Open bugs](https://img.shields.io/badge/Open-bugs-red.svg?style=flat-curved)](https://github.com/AlexRogalskiy/github-action-image-resizer/labels/bug)
 
-## _Table of contents_
+## *Table of contents*
 
-<!--ts-->
-   * [<em>Image Resizer</em>](#image-resizer)
-      * [<em>Table of contents</em>](#table-of-contents)
-      * [<em>Description</em>](#description)
-      * [<em>Inputs</em>](#inputs)
-         * [sourceData](#sourcedata)
-         * [width](#width)
-         * [height](#height)
-         * [quality](#quality)
-         * [formatType](#formattype)
-         * [sourceFile](#sourcefile)
-         * [targetPath](#targetpath)
-         * [targetFile](#targetfile)
-      * [<em>Outputs</em>](#outputs)
-         * [changed](#changed)
-            * [true](#true)
-            * [false](#false)
-      * [<em>Examples</em>](#examples)
-      * [<em>Visitor stats</em>](#visitor-stats)
-      * [<em>Licensing</em>](#licensing)
-      * [<em>Authors</em>](#authors)
-      * [<em>Versioning</em>](#versioning)
-      * [<em>Contribution</em>](#contribution)
-      * [<em>Acknowledgement</em>](#acknowledgement)
-      * [<em>Forks</em>](#forks)
-      * [<em>Development Support</em>](#development-support)
-<!--te-->
+- [*Description*](#description)
+- [*Inputs*](#inputs)
+  - [`sourceData`](#sourcedata)
+  - [`width`](#width)
+  - [`height`](#height)
+  - [`quality`](#quality)
+  - [`formatType`](#formattype)
+  - [`sourceFile`](#sourcefile)
+  - [`targetPath`](#targetpath)
+  - [`targetFile`](#targetfile)
+- [*Outputs*](#outputs)
+  - [`changed`](#changed)
+- [*Examples*](#examples)
+- [*Visitor stats*](#visitor-stats)
+- [*Licensing*](#licensing)
+- [*Authors*](#authors)
+- [*Versioning*](#versioning)
+- [*Contribution*](#contribution)
+- [*Acknowledgement*](#acknowledgement)
+- [*Forks*](#forks)
+- [*Development Support*](#development-support)
 
-## _Description_
+## *Description*
 
 <p align="center" style="text-align:center;">
     <a href="https://www.typescriptlang.org/">
@@ -89,7 +83,7 @@
 
 Provides operations on resizing input images from a file or url (jpeg, png, webp, avif, tiff, gif, svg) by format parameters.
 
-## _Inputs_
+## *Inputs*
 
 ### `sourceData`
 
@@ -182,7 +176,7 @@ Provides operations on resizing input images from a file or url (jpeg, png, webp
 
 **Optional** Target image file name (default **sourceFile**)
 
-## _Outputs_
+## *Outputs*
 
 ### `changed`
 
@@ -196,7 +190,7 @@ When input image file successfully processed
 
 When error occurred while processing input image file
 
-## _Examples_
+## *Examples*
 
 ```yml
 - name: Resize images
@@ -213,38 +207,38 @@ Running locally:
 
 - `npm run start:action --action github-action-image-resizer --prefix '<!--views:marker:start-->\n' --suffix '\n<!--views:marker:end-->' --sourceFile './data/info.md' --placeHolder '<!--views:marker:start-->[\s\S]*?<!--views:marker:end-->' --replacement '<p align="center" style="text-align:center;">Data Block</p>'`
 
-## _Visitor stats_
+## *Visitor stats*
 
-[![GitHub page hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FAlexRogalskiy%2Fgithub-action-image-resizer&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=true)](https://hits.seeyoufarm.com)
+[![GitHub page hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FAlexRogalskiy%2Fgithub-action-image-resizer\&count_bg=%2379C83D\&title_bg=%23555555\&icon=\&icon_color=%23E7E7E7\&title=hits\&edge_flat=true)](https://hits.seeyoufarm.com)
 
 ![GitHub stars](https://img.shields.io/github/stars/AlexRogalskiy/github-action-image-resizer?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/AlexRogalskiy/github-action-image-resizer?style=social)
 ![GitHub watchers](https://img.shields.io/github/watchers/AlexRogalskiy/github-action-image-resizer?style=social)
 
-## _Licensing_
+## *Licensing*
 
-_**Image Resizer**_ is distributed under LGPL version 3 or later,
-[[License](https://github.com/AlexRogalskiy/github-action-image-resizer/blob/master/LICENSE)]. LGPLv3 is additional
+***Image Resizer*** is distributed under LGPL version 3 or later,
+\[[License](https://github.com/AlexRogalskiy/github-action-image-resizer/blob/master/LICENSE)]. LGPLv3 is additional
 permissions on top of GPLv3.
 
 ![license](https://user-images.githubusercontent.com/19885116/48661948-6cf97e80-ea7a-11e8-97e7-b45332a13e49.png)
 
-## _Authors_
+## *Authors*
 
-_**Image Resizer**_ is maintained by the following GitHub team-members:
+***Image Resizer*** is maintained by the following GitHub team-members:
 
 - [![Author](https://img.shields.io/badge/author-AlexRogalskiy-FB8F0A)](https://github.com/AlexRogalskiy)
 
 with community support please contact with us if you have some question or proposition.
 
-## _Versioning_
+## *Versioning*
 
 The project uses [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on
 this repository][tags].
 
-## _Contribution_
+## *Contribution*
 
-[![Contributors Display](https://badges.pufler.dev/contributors/AlexRogalskiy/github-action-image-resizer?size=50&padding=5&bots=true)](https://badges.pufler.dev)
+[![Contributors Display](https://badges.pufler.dev/contributors/AlexRogalskiy/github-action-image-resizer?size=50\&padding=5\&bots=true)](https://badges.pufler.dev)
 
 Please read
 [CONTRIBUTING.md](https://github.com/AlexRogalskiy/github-action-image-resizer/blob/master/.github/CONTRIBUTING.md)
@@ -259,39 +253,48 @@ specification. Contributions of any kind are welcome!
 
 See also the list of [contributors][contributors] who participated in this project.
 
-## _Acknowledgement_
+## *Acknowledgement*
 
 [![Stargazers repo roster for @AlexRogalskiy/github-action-image-resizer](https://reporoster.com/stars/AlexRogalskiy/github-action-image-resizer)][stars]
 
-## _Forks_
+## *Forks*
 
 [![Forkers repo roster for @AlexRogalskiy/github-action-image-resizer](https://reporoster.com/forks/AlexRogalskiy/github-action-image-resizer)][forkers]
 
-## _Development Support_
+## *Development Support*
 
-Like _**Image Resizer**_ ? Consider buying me a coffee :\)
+Like ***Image Resizer*** ? Consider buying me a coffee :)
 
-[![Become a Patron](https://img.shields.io/badge/Become_Patron-Support_me_on_Patreon-blue.svg?style=flat-square&logo=patreon&color=e64413)](https://www.patreon.com/alexrogalskiy)
+[![Become a Patron](https://img.shields.io/badge/Become_Patron-Support_me_on_Patreon-blue.svg?style=flat-square\&logo=patreon\&color=e64413)](https://www.patreon.com/alexrogalskiy)
 [![Buy Me A Coffee](https://img.shields.io/badge/Donate-Buy%20me%20a%20coffee-yellow.svg?logo=buy%20me%20a%20coffee)](https://www.buymeacoffee.com/AlexRogalskiy)
 [![KoFi](https://img.shields.io/badge/Donate-Buy%20me%20a%20coffee-yellow.svg?logo=ko-fi)](https://ko-fi.com/alexrogalskiy)
 
----
+***
 
-[![forthebadge](https://img.shields.io/badge/made%20with-%20typescript-C1282D.svg?logo=typescript&style=for-the-badge)](https://www.typescriptlang.org/)
-[![forthebadge](https://img.shields.io/badge/powered%20by-%20github-7116FB.svg?logo=github&style=for-the-badge)](https://github.com/)
-[![forthebadge](https://img.shields.io/badge/build%20with-%20%E2%9D%A4-B6FF9B.svg?logo=heart&style=for-the-badge)](https://forthebadge.com/)
+[![forthebadge](https://img.shields.io/badge/made%20with-%20typescript-C1282D.svg?logo=typescript\&style=for-the-badge)](https://www.typescriptlang.org/)
+[![forthebadge](https://img.shields.io/badge/powered%20by-%20github-7116FB.svg?logo=github\&style=for-the-badge)](https://github.com/)
+[![forthebadge](https://img.shields.io/badge/build%20with-%20%E2%9D%A4-B6FF9B.svg?logo=heart\&style=for-the-badge)](https://forthebadge.com/)
 
 [repo]: https://github.com/AlexRogalskiy/github-action-image-resizer
+
 [tags]: https://github.com/AlexRogalskiy/github-action-image-resizer/tags
+
 [issues]: https://github.com/AlexRogalskiy/github-action-image-resizer/issues
+
 [pulls]: https://github.com/AlexRogalskiy/github-action-image-resizer/pulls
+
 [wiki]: https://github.com/AlexRogalskiy/github-action-image-resizer/wiki
+
 [stars]: https://github.com/AlexRogalskiy/github-action-image-resizer/stargazers
+
 [forkers]: https://github.com/AlexRogalskiy/github-action-image-resizer/network/members
+
 [contributors]: https://github.com/AlexRogalskiy/github-action-image-resizer/graphs/contributors
+
 [license_id]: https://img.shields.io/github/license/AlexRogalskiy/github-action-image-resizer
+
 [license_content]: https://github.com/AlexRogalskiy/github-action-image-resizer/blob/master/LICENSE
-[total_usages]:
-  https://img.shields.io/endpoint?url=https%3A%2F%2Fapi-git-master.endbug.vercel.app%2Fapi%2Fgithub-actions%2Fused-by%3Faction%3DAlexRogalskiy%2Fgithub-action-image-resizer%26badge%3Dtrue
-[search_results]:
-  https://github.com/search?o=desc&q=AlexRogalskiy/github-action-image-resizer+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Code
+
+[total_usages]: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi-git-master.endbug.vercel.app%2Fapi%2Fgithub-actions%2Fused-by%3Faction%3DAlexRogalskiy%2Fgithub-action-image-resizer%26badge%3Dtrue
+
+[search_results]: https://github.com/search?o=desc&q=AlexRogalskiy/github-action-image-resizer+path%3A.github%2Fworkflows+language%3AYAML&s=&type=Code
