@@ -24,7 +24,7 @@ import { getUrlName } from './commons'
 import { deserialize, serialize } from './serializers'
 import { isValidFile, isValidUrl } from './validators'
 
-import { valueError } from '../errors/errors'
+import { valueError } from '../errors/value.error'
 
 /**
  * FileData
@@ -51,7 +51,7 @@ export const getConfigOptions = (fileName: string): Partial<ConfigOptions>[] => 
     return deserialize(fileData.toString())
 }
 
-export const storeDataAsJson = async (filePath: string, fileName: string, data: any): Promise<void> => {
+export const storeDataAsJson = (filePath: string, fileName: string, data: any): void => {
     ensureDirExists(filePath)
 
     const targetPath = join(filePath, fileName)

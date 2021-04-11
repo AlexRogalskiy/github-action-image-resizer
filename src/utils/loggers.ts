@@ -1,4 +1,5 @@
 import * as core from '@actions/core'
+
 import dateFormat from 'dateformat'
 import boxen from 'boxen'
 
@@ -95,21 +96,8 @@ export const coreInfo = createLogger(core.info, message => boxen(message, profil
 
 export const coreError = createLogger(core.error, message => boxen(message.toString(), profile.outputOptions))
 
+export const coreDebug = createLogger(core.debug, message => boxen(message.toString(), profile.outputOptions))
+
 export const logArrayElements = <T>(index: number, array: T[]): void => {
     logs(`array[${index}] = ${array[index]}`)
-}
-
-export const dumpObject = (obj: any): string => {
-    let out = ''
-    if (obj && typeof obj === 'object') {
-        for (const i in obj) {
-            if (Object.prototype.hasOwnProperty.call(obj, i)) {
-                out += `${i}: ${obj[i]}n`
-            }
-        }
-    } else {
-        out = obj
-    }
-
-    return out
 }

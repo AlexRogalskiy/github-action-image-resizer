@@ -5,7 +5,9 @@ import { hasProperty } from './validators'
 
 import { CONFIG } from '../configs/configs'
 
-export const getProfileByEnv = (env: Optional<string> = process.env.NODE_ENV): ProfileOptions => {
+const { NODE_ENV } = process && process.env
+
+export const getProfileByEnv = (env: Optional<string> = NODE_ENV): ProfileOptions => {
     return env && hasProperty(CONFIG, env) ? CONFIG[env] : CONFIG.dev
 }
 

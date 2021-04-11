@@ -10,7 +10,7 @@ import { Optional } from './standard-types'
 export type PipedStream = {
     pipe<T>(destination: T, options?: { end?: boolean }): T
 }
-
+//--------------------------------------------------------------------------------------------------
 /**
  * ConfigOptions
  * @desc Type representing configuration options
@@ -49,7 +49,7 @@ export type ConfigOptions = {
      */
     readonly targetFile: string
 }
-
+//--------------------------------------------------------------------------------------------------
 /**
  * ProfileOptions
  * @desc Type representing profiles options
@@ -68,7 +68,7 @@ export type ProfileOptions = {
      */
     readonly outputOptions?: boxen.Options
 }
-
+//--------------------------------------------------------------------------------------------------
 /**
  * ImageFormatOptions
  * @desc Type representing image format options
@@ -107,7 +107,7 @@ export type ImageFormatOptions = {
      */
     readonly animated?: boolean
 }
-
+//--------------------------------------------------------------------------------------------------
 /**
  * ImageResizeOptions
  * @desc Type representing image resize options
@@ -146,7 +146,7 @@ export type ImageResizeOptions = {
      */
     readonly fastShrinkOnLoad?: boolean
 }
-
+//--------------------------------------------------------------------------------------------------
 /**
  * PositionMode
  * @desc Type representing position modes
@@ -160,7 +160,7 @@ export type PositionMode =
     | 'left bottom'
     | 'left'
     | 'left top'
-
+//--------------------------------------------------------------------------------------------------
 /**
  * GravityMode
  * @desc Type representing gravity modes
@@ -176,21 +176,22 @@ export type GravityMode =
     | 'northwest'
     | 'southeast'
     | 'southwest'
-
+//--------------------------------------------------------------------------------------------------
 /**
  * StrategyMode
  * @desc Type representing strategy modes
  */
 export type StrategyMode = 'cover'
-
+//--------------------------------------------------------------------------------------------------
 /**
  * FitMode
  * @desc Type representing fit modes
  */
 export type FitMode = 'cover' | 'contain' | 'fill' | 'inside' | 'outside'
-
+//--------------------------------------------------------------------------------------------------
 /**
  * KernelMode
  * @desc Type representing kernel modes
  */
 export type KernelMode = 'nearest' | 'cubic' | 'mitchell' | 'lanczos2' | 'lanczos3'
+//--------------------------------------------------------------------------------------------------

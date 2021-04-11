@@ -11,6 +11,7 @@ import {
 import { isValidFile } from './utils/validators'
 import { mergeProps, toInt } from './utils/commons'
 import { serialize } from './utils/serializers'
+import { getProperty, getRequiredProperty } from './utils/properties'
 
 import { coreError, coreInfo } from './utils/loggers'
 import { profile } from './utils/profiles'
@@ -87,14 +88,6 @@ const buildConfigOptions = async (options: Partial<ConfigOptions>): Promise<Conf
     }
 }
 
-const getRequiredProperty = (property: string): string => {
-    return getProperty(property, { required: true })
-}
-
-const getProperty = (property: string, options?: core.InputOptions): string => {
-    return core.getInput(property, options)
-}
-
 const getOperationStatus = async (option: Partial<ConfigOptions>): Promise<string> => {
     const options = await buildConfigOptions(option)
 
@@ -135,4 +128,4 @@ export default async function run(): Promise<void> {
     }
 }
 
-void run()
+run()

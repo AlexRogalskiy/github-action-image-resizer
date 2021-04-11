@@ -2,11 +2,11 @@ import { Optional } from '../../typings/standard-types'
 
 import { isFileExists } from './files'
 
-export const getType = (obj: any): string => {
-    return {}.toString
-        .call(obj)
-        .match(/\s(\w+)/)[1]
-        .toLowerCase()
+export const getType = (obj: any): Optional<string> => {
+    const value: string = {}.toString.call(obj)
+    const result = value.match(/\s(\w+)/)
+
+    return result && result[1].toLowerCase()
 }
 
 export const isNull = (value: any): boolean => {
@@ -43,11 +43,20 @@ export const isObject = (value: any): boolean => {
 }
 
 export const isFunction = (value: any): boolean => {
-    return isNotNull(value) && typeof value === 'function' && value.constructor && value.apply
+    return (
+        isNotNull(value) &&
+        typeof value === 'function' &&
+        typeof value['constructor'] === 'function' &&
+        typeof value['apply'] === 'function'
+    )
 }
 
 export const isNumber = (value: any): boolean => {
-    return isNotNull(value) && (typeof value === 'number' || getType(value) === 'number') && isFinite(value)
+    return (
+        isNotNull(value) &&
+        (typeof value === 'number' || getType(value) === 'number') &&
+        Number.isFinite(value)
+    )
 }
 
 /**
@@ -60,20 +69,7 @@ export const hasProperty = (obj: any, prop: Optional<PropertyKey>): boolean => {
     if (isNullOrUndefined(obj)) return false
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    return isFunction(obj.hasOwnProperty) ? Object.prototype.hasOwnProperty.call(obj, prop) : prop in obj
-}
-
-/**
- * Returns a boolean indicating whether the object has the specified property.
- * @param {Object} obj An object.
- * @param {String} prop A property name.
- * @returns {Boolean}
- */
-export const hasProperty2 = (obj: any, prop: PropertyKey): boolean => {
-    const proto = obj.__proto__ || obj.constructor.prototype
-
-    //return !obj.hasOwnProperty(prop) && prop in obj
-    return prop in obj || prop in proto || proto[prop] === obj[prop]
+    return isFunction(obj['hasOwnProperty']) ? Object.prototype.hasOwnProperty.call(obj, prop) : prop in obj
 }
 
 export const isBlankString = (value: string): boolean => {

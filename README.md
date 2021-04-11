@@ -30,6 +30,8 @@
 [![dependencies Status](https://status.david-dm.org/gh/AlexRogalskiy/github-action-image-resizer.svg)](https://david-dm.org/AlexRogalskiy/github-action-image-resizer)
 [![dependencies Status](https://status.david-dm.org/gh/AlexRogalskiy/github-action-image-resizer.svg)](https://david-dm.org/AlexRogalskiy/github-action-image-resizer?type=dev)
 
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/AlexRogalskiy/github-action-image-resizer.svg?logo=lgtm\&logoWidth=18)](https://lgtm.com/projects/g/AlexRogalskiy/github-action-image-resizer/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/AlexRogalskiy/github-action-image-resizer.svg?logo=lgtm\&logoWidth=18)](https://lgtm.com/projects/g/AlexRogalskiy/github-action-image-resizer/context:javascript)
 [![codecov](https://codecov.io/gh/AlexRogalskiy/github-action-image-resizer/branch/master/graph/badge.svg?token=uTDmIg0RMh)](https://codecov.io/gh/AlexRogalskiy/github-action-image-resizer)
 [![CI](https://github.com/AlexRogalskiy/github-action-image-resizer/workflows/CI/badge.svg)](https://github.com/AlexRogalskiy/github-action-image-resizer/actions/workflows/build.yml)
 [![CircleCI](https://circleci.com/gh/AlexRogalskiy/github-action-image-resizer.svg?style=shield)](https://circleci.com/gh/AlexRogalskiy/github-action-image-resizer)

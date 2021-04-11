@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>UnsupportedParameterError | GitHub action for Image Resizing</title>
+	<title>GeneralError | GitHub action for Image Resizing</title>
 	<meta name="description" content="Documentation for GitHub action for Image Resizing">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -53,13 +53,13 @@
 					<a href="../modules.html">GitHub action for Image Resizing</a>
 				</li>
 				<li>
-					<a href="../modules/src_errors_errors.html">src/errors/errors</a>
+					<a href="../modules/src_errors_general_error.html">src/errors/general.error</a>
 				</li>
 				<li>
-					<a href="src_errors_errors.unsupportedparametererror.html">UnsupportedParameterError</a>
+					<a href="src_errors_general_error.generalerror.html">GeneralError</a>
 				</li>
 			</ul>
-			<h1>Class UnsupportedParameterError</h1>
+			<h1>Class GeneralError</h1>
 		</div>
 	</div>
 </header>
@@ -69,11 +69,11 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>UnsupportedParameterError</p>
+						<p>GeneralError</p>
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>desc</dt>
-						<dd><p>Class representing unsupported parameter error</p>
+						<dd><p>Class representing general error</p>
 						</dd>
 					</dl>
 				</div>
@@ -82,10 +82,15 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="src_errors_errors.generalerror.html" class="tsd-signature-type" data-tsd-kind="Class">GeneralError</a>
+						<a href="src_errors_extendable_error.extendableerror.html" class="tsd-signature-type" data-tsd-kind="Class">ExtendableError</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">UnsupportedParameterError</span>
+								<span class="target">GeneralError</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="src_errors_value_error.valueerror.html" class="tsd-signature-type" data-tsd-kind="Class">ValueError</a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</li>
@@ -98,27 +103,26 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="src_errors_errors.unsupportedparametererror.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="src_errors_general_error.generalerror.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="src_errors_errors.unsupportedparametererror.html#args" class="tsd-kind-icon">args</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="src_errors_errors.unsupportedparametererror.html#message" class="tsd-kind-icon">message</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="src_errors_errors.unsupportedparametererror.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="src_errors_errors.unsupportedparametererror.html#parameter" class="tsd-kind-icon">parameter</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="src_errors_errors.unsupportedparametererror.html#stack" class="tsd-kind-icon">stack</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="src_errors_errors.unsupportedparametererror.html#type" class="tsd-kind-icon">type</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="src_errors_errors.unsupportedparametererror.html#preparestacktrace" class="tsd-kind-icon">prepare<wbr>Stack<wbr>Trace</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="src_errors_errors.unsupportedparametererror.html#stacktracelimit" class="tsd-kind-icon">stack<wbr>Trace<wbr>Limit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="src_errors_general_error.generalerror.html#args" class="tsd-kind-icon">args</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="src_errors_general_error.generalerror.html#message" class="tsd-kind-icon">message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="src_errors_general_error.generalerror.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="src_errors_general_error.generalerror.html#stack" class="tsd-kind-icon">stack</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="src_errors_general_error.generalerror.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="src_errors_general_error.generalerror.html#preparestacktrace" class="tsd-kind-icon">prepare<wbr>Stack<wbr>Trace</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="src_errors_general_error.generalerror.html#stacktracelimit" class="tsd-kind-icon">stack<wbr>Trace<wbr>Limit</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-inherited">
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="src_errors_errors.unsupportedparametererror.html#logmessage" class="tsd-kind-icon">log<wbr>Message</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="src_errors_errors.unsupportedparametererror.html#capturestacktrace" class="tsd-kind-icon">capture<wbr>Stack<wbr>Trace</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="src_errors_general_error.generalerror.html#logmessage" class="tsd-kind-icon">log<wbr>Message</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="src_errors_general_error.generalerror.html#capturestacktrace" class="tsd-kind-icon">capture<wbr>Stack<wbr>Trace</a></li>
 							</ul>
 						</section>
 					</div>
@@ -130,25 +134,34 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Unsupported<wbr>Parameter<wbr>Error<span class="tsd-signature-symbol">(</span>parameter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="src_errors_errors.unsupportedparametererror.html" class="tsd-signature-type" data-tsd-kind="Class">UnsupportedParameterError</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>General<wbr>Error<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="../enums/typings_enum_types.errortype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ErrorType</a>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="src_errors_general_error.generalerror.html" class="tsd-signature-type" data-tsd-kind="Class">GeneralError</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="src_errors_errors.generalerror.html">GeneralError</a>.<a href="src_errors_errors.generalerror.html#constructor">constructor</a></p>
+								<p>Overrides <a href="src_errors_extendable_error.extendableerror.html">ExtendableError</a>.<a href="src_errors_extendable_error.extendableerror.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/AlexRogalskiy/github-action-image-resizer/blob/d20fd23/src/errors/errors.ts#L141">src/errors/errors.ts:141</a></li>
+									<li>Defined in <a href="https://github.com/AlexRogalskiy/github-action-image-resizer/blob/555db64/src/errors/general.error.ts#L13">src/errors/general.error.ts:13</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Unsupported parameter error constructor by input parameters</p>
+									<p>General error constructor by input parameters</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>parameter: <span class="tsd-signature-type">string</span></h5>
+									<h5>type: <a href="../enums/typings_enum_types.errortype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ErrorType</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>initial input <a href="../enums/typings_enum_types.errortype.html">ErrorType</a></p>
+									</div>
+								</li>
+								<li>
+									<h5>message: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>initial input {@link string} message</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
@@ -157,21 +170,20 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="src_errors_errors.unsupportedparametererror.html" class="tsd-signature-type" data-tsd-kind="Class">UnsupportedParameterError</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="src_errors_general_error.generalerror.html" class="tsd-signature-type" data-tsd-kind="Class">GeneralError</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="args" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> args</h3>
 					<div class="tsd-signature tsd-kind-icon">args<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="src_errors_errors.generalerror.html">GeneralError</a>.<a href="src_errors_errors.generalerror.html#args">args</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/AlexRogalskiy/github-action-image-resizer/blob/d20fd23/src/errors/errors.ts#L70">src/errors/errors.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/AlexRogalskiy/github-action-image-resizer/blob/555db64/src/errors/general.error.ts#L13">src/errors/general.error.ts:13</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -185,7 +197,7 @@
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> message</h3>
 					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="src_errors_errors.generalerror.html">GeneralError</a>.<a href="src_errors_errors.generalerror.html#message">message</a></p>
+						<p>Inherited from <a href="src_errors_extendable_error.extendableerror.html">ExtendableError</a>.<a href="src_errors_extendable_error.extendableerror.html#message">message</a></p>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -193,17 +205,10 @@
 					<h3>name</h3>
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="src_errors_errors.generalerror.html">GeneralError</a>.<a href="src_errors_errors.generalerror.html#name">name</a></p>
+						<p>Inherited from <a href="src_errors_extendable_error.extendableerror.html">ExtendableError</a>.<a href="src_errors_extendable_error.extendableerror.html#name">name</a></p>
 						<ul>
 							<li>Defined in node_modules/typescript/lib/lib.es5.d.ts:973</li>
 						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="parameter" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> parameter</h3>
-					<div class="tsd-signature tsd-kind-icon">parameter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
@@ -211,7 +216,7 @@
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> stack</h3>
 					<div class="tsd-signature tsd-kind-icon">stack<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="src_errors_errors.generalerror.html">GeneralError</a>.<a href="src_errors_errors.generalerror.html#stack">stack</a></p>
+						<p>Inherited from <a href="src_errors_extendable_error.extendableerror.html">ExtendableError</a>.<a href="src_errors_extendable_error.extendableerror.html#stack">stack</a></p>
 						<ul>
 							<li>Defined in node_modules/typescript/lib/lib.es5.d.ts:975</li>
 						</ul>
@@ -220,9 +225,9 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="type" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/src_errors_errors.errortype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ErrorType</a></div>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/typings_enum_types.errortype.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ErrorType</a></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="src_errors_errors.generalerror.html">GeneralError</a>.<a href="src_errors_errors.generalerror.html#type">type</a></p>
+						<p>Inherited from <a href="src_errors_extendable_error.extendableerror.html">ExtendableError</a>.<a href="src_errors_extendable_error.extendableerror.html#type">type</a></p>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
@@ -230,7 +235,7 @@
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagOptional">Optional</span> prepare<wbr>Stack<wbr>Trace</h3>
 					<div class="tsd-signature tsd-kind-icon">prepare<wbr>Stack<wbr>Trace<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span>, stackTraces<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CallSite</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="src_errors_errors.generalerror.html">GeneralError</a>.<a href="src_errors_errors.generalerror.html#preparestacktrace">prepareStackTrace</a></p>
+						<p>Inherited from <a href="src_errors_extendable_error.extendableerror.html">ExtendableError</a>.<a href="src_errors_extendable_error.extendableerror.html#preparestacktrace">prepareStackTrace</a></p>
 						<ul>
 							<li>Defined in node_modules/@types/node/globals.d.ts:11</li>
 						</ul>
@@ -275,27 +280,26 @@
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> stack<wbr>Trace<wbr>Limit</h3>
 					<div class="tsd-signature tsd-kind-icon">stack<wbr>Trace<wbr>Limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="src_errors_errors.generalerror.html">GeneralError</a>.<a href="src_errors_errors.generalerror.html#stacktracelimit">stackTraceLimit</a></p>
+						<p>Inherited from <a href="src_errors_extendable_error.extendableerror.html">ExtendableError</a>.<a href="src_errors_extendable_error.extendableerror.html#stacktracelimit">stackTraceLimit</a></p>
 						<ul>
 							<li>Defined in node_modules/@types/node/globals.d.ts:13</li>
 						</ul>
 					</aside>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 					<a name="logmessage" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> log<wbr>Message</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 						<li class="tsd-signature tsd-kind-icon">log<wbr>Message<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="src_errors_errors.generalerror.html">GeneralError</a>.<a href="src_errors_errors.generalerror.html#logmessage">logMessage</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/AlexRogalskiy/github-action-image-resizer/blob/d20fd23/src/errors/errors.ts#L87">src/errors/errors.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/AlexRogalskiy/github-action-image-resizer/blob/555db64/src/errors/general.error.ts#L30">src/errors/general.error.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -316,7 +320,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="src_errors_errors.generalerror.html">GeneralError</a>.<a href="src_errors_errors.generalerror.html#capturestacktrace">captureStackTrace</a></p>
+								<p>Inherited from <a href="src_errors_extendable_error.extendableerror.html">ExtendableError</a>.<a href="src_errors_extendable_error.extendableerror.html#capturestacktrace">captureStackTrace</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/node/globals.d.ts:4</li>
 								</ul>
@@ -356,8 +360,14 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/src_constants_constants.html">src/constants/constants</a>
 					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/src_errors_extendable_error.html">src/errors/extendable.error</a>
+					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/src_errors_errors.html">src/errors/errors</a>
+						<a href="../modules/src_errors_general_error.html">src/errors/general.error</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/src_errors_value_error.html">src/errors/value.error</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/src_utils_commons.html">src/utils/commons</a>
@@ -370,6 +380,9 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/src_utils_profiles.html">src/utils/profiles</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/src_utils_properties.html">src/utils/properties</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/src_utils_serializers.html">src/utils/serializers</a>
@@ -390,78 +403,45 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum tsd-parent-kind-module">
-						<a href="../enums/src_errors_errors.errortype.html" class="tsd-kind-icon">Error<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="src_errors_errors.extendableerror.html" class="tsd-kind-icon">Extendable<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="src_errors_errors.generalerror.html" class="tsd-kind-icon">General<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="src_errors_errors.typeerror.html" class="tsd-kind-icon">Type<wbr>Error</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="src_errors_errors.unsupportedparametererror.html" class="tsd-kind-icon">Unsupported<wbr>Parameter<wbr>Error</a>
+						<a href="src_errors_general_error.generalerror.html" class="tsd-kind-icon">General<wbr>Error</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-								<a href="src_errors_errors.unsupportedparametererror.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="src_errors_errors.unsupportedparametererror.html#args" class="tsd-kind-icon">args</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="src_errors_errors.unsupportedparametererror.html#message" class="tsd-kind-icon">message</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="src_errors_errors.unsupportedparametererror.html#name" class="tsd-kind-icon">name</a>
+								<a href="src_errors_general_error.generalerror.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="src_errors_errors.unsupportedparametererror.html#parameter" class="tsd-kind-icon">parameter</a>
+								<a href="src_errors_general_error.generalerror.html#args" class="tsd-kind-icon">args</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="src_errors_errors.unsupportedparametererror.html#stack" class="tsd-kind-icon">stack</a>
+								<a href="src_errors_general_error.generalerror.html#message" class="tsd-kind-icon">message</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="src_errors_errors.unsupportedparametererror.html#type" class="tsd-kind-icon">type</a>
+								<a href="src_errors_general_error.generalerror.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="src_errors_general_error.generalerror.html#stack" class="tsd-kind-icon">stack</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="src_errors_general_error.generalerror.html#type" class="tsd-kind-icon">type</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="src_errors_errors.unsupportedparametererror.html#preparestacktrace" class="tsd-kind-icon">prepare<wbr>Stack<wbr>Trace</a>
+								<a href="src_errors_general_error.generalerror.html#preparestacktrace" class="tsd-kind-icon">prepare<wbr>Stack<wbr>Trace</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="src_errors_errors.unsupportedparametererror.html#stacktracelimit" class="tsd-kind-icon">stack<wbr>Trace<wbr>Limit</a>
+								<a href="src_errors_general_error.generalerror.html#stacktracelimit" class="tsd-kind-icon">stack<wbr>Trace<wbr>Limit</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="src_errors_errors.unsupportedparametererror.html#logmessage" class="tsd-kind-icon">log<wbr>Message</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="src_errors_general_error.generalerror.html#logmessage" class="tsd-kind-icon">log<wbr>Message</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="src_errors_errors.unsupportedparametererror.html#capturestacktrace" class="tsd-kind-icon">capture<wbr>Stack<wbr>Trace</a>
+								<a href="src_errors_general_error.generalerror.html#capturestacktrace" class="tsd-kind-icon">capture<wbr>Stack<wbr>Trace</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="src_errors_errors.validationerror.html" class="tsd-kind-icon">Validation<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="src_errors_errors.valueerror.html" class="tsd-kind-icon">Value<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/src_errors_errors.html#typeerror-1" class="tsd-kind-icon">type<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/src_errors_errors.html#unsupportedparamerror" class="tsd-kind-icon">unsupported<wbr>Param<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/src_errors_errors.html#validationerror-1" class="tsd-kind-icon">validation<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/src_errors_errors.html#valueerror-1" class="tsd-kind-icon">value<wbr>Error</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -488,6 +468,9 @@
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
 			</ul>
 		</div>
 	</div>
