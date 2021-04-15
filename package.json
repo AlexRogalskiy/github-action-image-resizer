@@ -3,7 +3,6 @@
     "version": "0.0.0-dev",
     "description": "Automatically resizes image files (jpeg, png, webp, avif, tiff, gif and svg) by provided format parameters",
     "main": "dist/index.js",
-    "types": "dist/index.d.ts",
     "license": "GPL-3.0",
     "private": true,
     "scripts": {

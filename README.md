@@ -1,6 +1,6 @@
 # *Image Resizer*
 
-> GitHub Action to resize images (jpeg, png, webp, avif, tiff, gif, svg) from a file or url
+> GitHub Action to resize images (jpeg, png, webp, avif, tiff, gif, svg) from file/url
 
 [![GitHub marketplace](https://img.shields.io/badge/marketplacegithub-image--resizer-blue?logo=github)](https://github.com/marketplace/actions/image-resizer)
 
