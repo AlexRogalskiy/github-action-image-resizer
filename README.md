@@ -30,6 +30,7 @@
 [![dependencies Status](https://status.david-dm.org/gh/AlexRogalskiy/github-action-image-resizer.svg)](https://david-dm.org/AlexRogalskiy/github-action-image-resizer)
 [![dependencies Status](https://status.david-dm.org/gh/AlexRogalskiy/github-action-image-resizer.svg)](https://david-dm.org/AlexRogalskiy/github-action-image-resizer?type=dev)
 
+[![Coverage Status](https://coveralls.io/repos/github/AlexRogalskiy/github-action-image-resizer/badge.svg?branch=master)](https://coveralls.io/github/AlexRogalskiy/github-action-image-resizer?branch=master)
 [![codebeat badge](https://codebeat.co/badges/c6d7ccb2-16da-4e52-920b-b770ace56fef)](https://codebeat.co/projects/github-com-alexrogalskiy-github-action-image-resizer-master)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/AlexRogalskiy/github-action-image-resizer.svg?logo=lgtm\&logoWidth=18)](https://lgtm.com/projects/g/AlexRogalskiy/github-action-image-resizer/alerts/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/AlexRogalskiy/github-action-image-resizer.svg?logo=lgtm\&logoWidth=18)](https://lgtm.com/projects/g/AlexRogalskiy/github-action-image-resizer/context:javascript)
