@@ -101,7 +101,7 @@
         "remark-validate-links": "^10.0.2",
         "remark-lint-code-block-style": "^2.0.1",
         "remark-preset-davidtheclark": "^0.12.0",
-        "remark-lint-ordered-list-marker-value": "^2.0.1",
+        "remark-lint-ordered-list-marker-value": "^3.0.0",
         "markdown-link-check": "^3.8.6",
         "jsonlint": "^1.6.3",
         "ts-jest": "^26.4.4",
